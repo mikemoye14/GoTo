@@ -1,0 +1,197 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ChooseDestination" >
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/destinationScrollView"
+        android:layout_alignParentBottom="true"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/clear"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/rescanButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/re_scan"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/goToButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/go_to"
+            android:textColor="@color/white" />
+    </TableRow>
+    
+    <View
+        android:id="@+id/bottomRule"
+        android:layout_width="fill_parent"
+        android:layout_height="5dip"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:layout_marginTop="20dp" />
+
+    <ScrollView
+        android:id="@+id/destinationScrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="300dp"
+        android:layout_alignLeft="@+id/tableRow2"
+        android:layout_centerVertical="true"
+        android:background="@color/white"
+        android:fadeScrollbars="false"
+        android:padding="5dp"
+        android:scrollbarStyle="outsideOverlay" >
+
+        <TableLayout
+            android:id="@+id/destinationTable"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" >
+
+            <Button
+                android:id="@+id/mcb_rabDestinationButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mcb_rab"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/pulloDestinationButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pullo_center"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/jrrsccDestinationButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/jrrscc"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/istDestinationButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/istc"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/eliasDestinationButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/elias"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/bradleyDestinationButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bradley"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/bistroDestinationButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/star"
+                android:text="@string/bistro"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/lionsDenDestinationButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/star"
+                android:text="@string/lions_den"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/helpDeskDestinationButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/star"
+                android:text="@string/help_desk"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/gameRoomDestinationButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/star"
+                android:text="@string/game_room"
+                android:textColor="@color/white" />
+        </TableLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/currentLocatonButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/youAreAtLabel"
+        android:layout_centerHorizontal="true"
+        android:text="@string/current_location"
+        android:textColor="@color/white" />
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/selectDestinationLabel"
+        android:layout_below="@+id/currentLocatonButton"
+        android:gravity="center" >
+
+        <View
+            android:id="@+id/topRule"
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_margin="5dp"
+            android:background="#000000" />
+    </TableRow>
+
+    <TextView
+        android:id="@+id/youAreAtLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/currentLocatonButton"
+        android:layout_alignParentTop="true"
+        android:text="@string/you_are_at"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/selectDestinationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/currentLocatonButton"
+        android:layout_below="@+id/tableRow2"
+        android:text="@string/select_destination"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000000" />
+
+    <View
+        android:id="@+id/bottomRule"
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:layout_below="@+id/destinationScrollView"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:layout_marginTop="20dp"
+        android:background="#000000" />
+
+</RelativeLayout>
