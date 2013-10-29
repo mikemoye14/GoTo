@@ -7,7 +7,7 @@ Penn State GoTo
 
 <strong>Prepared by:</strong> Class of IST 413 
 
-<strong>Date: September 19, 2013</strong>
+<strong>Date:</strong> September 19, 2013
 
 <strong>Justification:</strong> Through this project we aim at providing a simple Android mobile application that will guide the user through the Penn State York campus. This project is to help the students find the required classrooms and important information corresponding to the each building through the scanning of QR codes. Eclipse IDE to be used. Product Characteristics and Features: Information about current location. Information about destination. Drop down menus for selections. Scan QR codes. Text based directions.
 
