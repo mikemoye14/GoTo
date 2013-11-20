@@ -22,9 +22,6 @@ public class GetDirections extends Activity {
     private ZXingLibConfig zxingLibConfig;
     
     private String scanResultTxt;
-    
-    View destination = findViewById(R.id.destinationTextView);
-    View beginning = findViewById(R.id.beginningTextView);
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +31,16 @@ public class GetDirections extends Activity {
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		
 		zxingLibConfig = new ZXingLibConfig();
-        zxingLibConfig.useFrontLight = true;       
+        zxingLibConfig.useFrontLight = true;  
         
-        ((TextView) destination).setText(getIntent().getStringExtra("destination").toUpperCase());
-        ((TextView) beginning).setText(getIntent().getStringExtra("beginning").toUpperCase());
+        TextView toFrom = (TextView) findViewById(R.id.toFromTextView);
         
-        Button newDestinationButton = (Button) findViewById(R.id.newBuildingButton);
-    	Button reScanButton = (Button) findViewById(R.id.rescanButton);
-        reScanButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
+        toFrom.setText("From " + ChooseDestination.getDestination() + " to " + ChooseDestination.getBeginning());
+               
+        View newDestinationButton = (Button) findViewById(R.id.newDestinationButton);
+    	View reScanDirectionsButton = (Button) findViewById(R.id.reScanDirectionsButton);
+    	
+    	reScanDirectionsButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
         newDestinationButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
         
         

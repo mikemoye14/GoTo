@@ -25,9 +25,9 @@ public class ChooseDestination extends Activity {
     
     private String scanResultTxt;
     
-    private String scanResult;
+    private static String scanResult;
     
-    private String buildingSelected;
+    private static String buildingSelected;
     
     //private Intent wrongCodeIntent = new Intent(ChooseDestination.this, WrongQRCode.class);
     
@@ -87,10 +87,7 @@ public class ChooseDestination extends Activity {
             	Intent intent= new Intent(ChooseDestination.this, GetDirections.class);
             	
             	intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            	
-            	intent.putExtra("beginning", scanResult.toUpperCase());
-            	intent.putExtra("destination", buildingSelected);
-            	
+            	            	
                 startActivity(intent);
             	
             }
@@ -264,4 +261,16 @@ public class ChooseDestination extends Activity {
             default:
         }
     }
+	
+	public static String getDestination(){
+		
+		return buildingSelected;		
+	
+	}
+	
+	public static String getBeginning(){
+		
+		return scanResult;		
+	
+	}
 }
