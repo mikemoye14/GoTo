@@ -12,7 +12,7 @@ import android.view.View.OnClickListener;
 
 public class BuildingList extends Activity {
 	
-	public String buildingSelected;
+	public String locationSelected;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,11 +55,11 @@ public class BuildingList extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	buildingSelected = "MCB/RAB";
+            	locationSelected = "MCB/RAB";
             	
             	Intent intent= new Intent(BuildingList.this, BuildingInfo.class);
             	
-            	intent.putExtra("buildingSelected", buildingSelected);
+            	intent.putExtra("locationSelected", locationSelected);
             	
                 startActivity(intent);
             }
@@ -69,11 +69,11 @@ public class BuildingList extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	buildingSelected = "PULLO CENTER (PAC)";
+            	locationSelected = "PULLO CENTER (PAC)";
             	
             	Intent intent= new Intent(BuildingList.this, BuildingInfo.class);
             	
-            	intent.putExtra("buildingSelected", buildingSelected);
+            	intent.putExtra("locationSelected", locationSelected);
             	
                 startActivity(intent);
             }
@@ -83,11 +83,11 @@ public class BuildingList extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	buildingSelected = "JRR STUDENT COMM. CNTR";
+            	locationSelected = "JRR STUDENT COMM. CNTR";
             	
             	Intent intent= new Intent(BuildingList.this, BuildingInfo.class);
             	
-            	intent.putExtra("buildingSelected", buildingSelected);
+            	intent.putExtra("locationSelected", locationSelected);
             	
                 startActivity(intent);
             }
@@ -97,11 +97,11 @@ public class BuildingList extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	buildingSelected = "GRUMBRACHER ISTC";
+            	locationSelected = "GRUMBRACHER ISTC";
             	
             	Intent intent= new Intent(BuildingList.this, BuildingInfo.class);
             	
-            	intent.putExtra("buildingSelected", buildingSelected);
+            	intent.putExtra("locationSelected", locationSelected);
             	
                 startActivity(intent);
             }
@@ -111,11 +111,11 @@ public class BuildingList extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	buildingSelected = "SCIENCE BUILDING (ELIAS)";
+            	locationSelected = "SCIENCE BUILDING (ELIAS)";
             	
             	Intent intent= new Intent(BuildingList.this, BuildingInfo.class);
             	
-            	intent.putExtra("buildingSelected", buildingSelected);
+            	intent.putExtra("locationSelected", locationSelected);
             	
                 startActivity(intent);
             }
@@ -125,11 +125,11 @@ public class BuildingList extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	buildingSelected = "BRADLEY BUILDING";
+            	locationSelected = "BRADLEY BUILDING";
             	
             	Intent intent= new Intent(BuildingList.this, BuildingInfo.class);
             	
-            	intent.putExtra("buildingSelected", buildingSelected);
+            	intent.putExtra("locationSelected", locationSelected);
             	
                 startActivity(intent);
             }
@@ -139,11 +139,11 @@ public class BuildingList extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	buildingSelected = "PULLO CENTER (PAC)";
+            	locationSelected = "BISTRO @ PULLO";
             	
             	Intent intent= new Intent(BuildingList.this, BuildingInfo.class);
             	
-            	intent.putExtra("buildingSelected", buildingSelected);
+            	intent.putExtra("locationSelected", locationSelected);
             	
                 startActivity(intent);
             }
@@ -153,11 +153,11 @@ public class BuildingList extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	buildingSelected = "JRR STUDENT COMM. CNTR";
+            	locationSelected = "LION'S DEN(CAFETERIA)";
             	
             	Intent intent= new Intent(BuildingList.this, BuildingInfo.class);
             	
-            	intent.putExtra("buildingSelected", buildingSelected);
+            	intent.putExtra("locationSelected", locationSelected);
             	
                 startActivity(intent);
             }
@@ -167,11 +167,11 @@ public class BuildingList extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	buildingSelected = "GRUMBRACHER ISTC";
+            	locationSelected = "HELP DESK";
             	
             	Intent intent= new Intent(BuildingList.this, BuildingInfo.class);
             	
-            	intent.putExtra("buildingSelected", buildingSelected);
+            	intent.putExtra("locationSelected", locationSelected);
             	
                 startActivity(intent);
             }
@@ -181,11 +181,11 @@ public class BuildingList extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	buildingSelected = "JRR STUDENT COMM. CNTR";
+            	locationSelected = "GAME ROOM";
             	
             	Intent intent= new Intent(BuildingList.this, BuildingInfo.class);
             	
-            	intent.putExtra("buildingSelected", buildingSelected);
+            	intent.putExtra("locationSelected", locationSelected);
             	
                 startActivity(intent);
             }

@@ -4,7 +4,10 @@ import jim.h.common.android.lib.zxing.config.ZXingLibConfig;
 import jim.h.common.android.lib.zxing.integrator.IntentIntegrator;
 import jim.h.common.android.lib.zxing.integrator.IntentResult;
 import jim.h.common.android.lib.zxing.sample.R;
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.LightingColorFilter;
@@ -14,6 +17,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 //import android.widget.TextView;
 
+@SuppressLint("DefaultLocale")
 public class MainActivity extends Activity {
     private Handler        handler = new Handler();
     //private TextView       txtScanResult;
@@ -35,6 +39,15 @@ public class MainActivity extends Activity {
         View btnScan = findViewById(R.id.scan_button);
         View getInfoButton = findViewById(R.id.getInfoButton);
         View aboutButton = findViewById(R.id.aboutButton);
+        
+        final AlertDialog.Builder aboutPopUp = new AlertDialog.Builder(this)
+                .setTitle("About")
+                .setMessage("About Summary Goes Here.")
+                .setPositiveButton("OK. Got It.", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) { 
+                       // do nothing
+                    }
+                 });
 		
         btnScan.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
         getInfoButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
@@ -57,6 +70,13 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
+        
+        aboutButton.setOnClickListener(new OnClickListener() {
+        	             @Override
+        	             public void onClick(View v) {
+        	               aboutPopUp.show();
+        	            }
+        	         });
         
         
     }

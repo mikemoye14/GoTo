@@ -3,6 +3,8 @@
 	<name>GoTo</name>
 	<comment></comment>
 	<projects>
+		<project>AndroidBootstrap</project>
+		<project>ZXingLib</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

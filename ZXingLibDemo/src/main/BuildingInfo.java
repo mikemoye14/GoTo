@@ -23,8 +23,8 @@ public class BuildingInfo extends Activity {
 		TextView buildingSelected = (TextView) findViewById(R.id.buildingSelected);
 		TextView buildingSummary = (TextView) findViewById(R.id.buildingSummaryAndInfo);
 		
-		buildingSelected.setText(getIntent().getStringExtra("buildingSelected"));
-		buildingSummary.setText(getIntent().getStringExtra("buildingSelected") + " Summary");
+		buildingSelected.setText(getIntent().getStringExtra("locationSelected"));
+		buildingSummary.setText(getIntent().getStringExtra("locationSelected") + " Summary");
 		
 		
 		View mainMenuButton = findViewById(R.id.mainMenuButton);
