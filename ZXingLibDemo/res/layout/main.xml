@@ -13,46 +13,43 @@ xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-	<TableLayout	    
-	   	android:layout_width="fill_parent" 
-	    android:layout_height="wrap_content" 
-	    android:id="@+id/tableLayout1" >
+	<TableLayout
+	    android:id="@+id/tableLayout1"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content" >
 
 	    <View
-		  android:layout_width="1dp"
-		  android:layout_height="100dp">
-		</View>
+	        android:layout_width="1dp"
+	        android:layout_height="49dp" >
+	    </View>
 
 	    <TableRow
 	        android:id="@+id/tableRow1"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content" >
-
-
 	    </TableRow>
 
 	    <ImageView
 	        android:id="@+id/imageView1"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
+	        android:layout_width="192dp"
+	        android:layout_height="192dp"
 	        android:layout_marginBottom="10dp"
 	        android:contentDescription="@string/logo"
 	        android:src="@drawable/logo" />
-	    
-	    <View
-		  android:layout_width="1dp"
-		  android:layout_height="50dp">
-		</View>
 
-	    
-	  	<Button
+	    <View
+	        android:layout_width="1dp"
+	        android:layout_height="50dp" >
+	    </View>
+
+	    <Button
 	        android:id="@+id/scan_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text="@string/get_directions"
-	        android:textColor="@color/white" /> 
-	   
-	    <!--     
+	        android:textColor="@color/white" />
+
+	    <!--
 	    <com.beardedhen.androidbootstrap.BootstrapButton
                 android:id="@+id/scan_button"
                 android:layout_width="wrap_content"
@@ -61,18 +58,17 @@ xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
                 android:text="@string/get_directions"
                 bootstrapbutton:bb_type="primary"
                  />
+	    -->
 
-	   	-->
-	   
-	   	<Button
+	    <Button
 	        android:id="@+id/getInfoButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="28dp"
 	        android:text="@string/get_information"
 	        android:textColor="@color/white" />
-	    
-	   <!--  
+
+	    <!--
 	    <com.beardedhen.androidbootstrap.BootstrapButton
                 android:id="@+id/getInfoButton"
                 android:layout_width="wrap_content"
@@ -81,17 +77,19 @@ xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
                 android:text="@string/get_information"
                 bootstrapbutton:bb_type="primary"
                  />
-	-->
-	
+	    -->
+
 	    <Button
 	        android:id="@+id/aboutButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="26dp"
+	        android:layout_marginBottom="20dp"
+	        android:layout_weight="0.31"
 	        android:text="@string/about"
 	        android:textColor="@color/white" />
 
-	<!-- 
+	    <!--
 	<com.beardedhen.androidbootstrap.BootstrapButton
                 android:id="@+id/aboutButton"
                 android:layout_width="wrap_content"
@@ -100,7 +98,7 @@ xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
                 android:text="@string/about"
                 bootstrapbutton:bb_type="primary"
                  />
-	-->
+	    -->
 	</TableLayout>
 	
 </ScrollView>	
