@@ -6,6 +6,7 @@ import jim.h.common.android.lib.zxing.integrator.IntentResult;
 import jim.h.common.android.lib.zxing.sample.R;
 import android.os.Bundle;
 import android.os.Handler;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+@SuppressLint("DefaultLocale")
 public class ChooseDestination extends Activity {
 	
 	private Handler        handler = new Handler();
@@ -49,10 +51,7 @@ public class ChooseDestination extends Activity {
     	final Button istButton = (Button) findViewById(R.id.istDestinationButton);
     	final Button eliasButton = (Button) findViewById(R.id.eliasDestinationButton);
     	final Button bradleyButton = (Button) findViewById(R.id.bradleyDestinationButton);
-    	final Button bistroButton = (Button) findViewById(R.id.bistroDestinationButton);
-    	final Button lionsDenButton = (Button) findViewById(R.id.lionsDenDestinationButton);
-    	final Button helpDeskButton = (Button) findViewById(R.id.helpDeskDestinationButton);
-    	final Button gameRoomButton = (Button) findViewById(R.id.gameRoomDestinationButton);
+
     	final Button goToButton = (Button) findViewById(R.id.goToButton);	
     	Button currentLocationButton = (Button) findViewById(R.id.currentLocatonButton);
     	Button clearButton = (Button) findViewById(R.id.clearButton);
@@ -64,10 +63,7 @@ public class ChooseDestination extends Activity {
 		istButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
 		eliasButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
 		bradleyButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
-		bistroButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
-		lionsDenButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
-		helpDeskButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
-		gameRoomButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
+		
 		reScanButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
 		goToButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
 		clearButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
@@ -110,10 +106,6 @@ public class ChooseDestination extends Activity {
             	istButton.setEnabled(true);
             	eliasButton.setEnabled(true);
             	bradleyButton.setEnabled(true);
-            	bistroButton.setEnabled(true);
-            	lionsDenButton.setEnabled(true);
-            	helpDeskButton.setEnabled(true);
-            	gameRoomButton.setEnabled(true);
             	
             	goToButton.setEnabled(false);
             }
@@ -142,10 +134,6 @@ public class ChooseDestination extends Activity {
             	istButton.setEnabled(false);
             	eliasButton.setEnabled(false);
             	bradleyButton.setEnabled(false);
-            	bistroButton.setEnabled(false);
-            	lionsDenButton.setEnabled(false);
-            	helpDeskButton.setEnabled(false);
-            	gameRoomButton.setEnabled(false);
             	
             	goToButton.setEnabled(true);
             	
@@ -162,10 +150,6 @@ public class ChooseDestination extends Activity {
             	istButton.setEnabled(false);
             	eliasButton.setEnabled(false);
             	bradleyButton.setEnabled(false);
-            	bistroButton.setEnabled(false);
-            	lionsDenButton.setEnabled(false);
-            	helpDeskButton.setEnabled(false);
-            	gameRoomButton.setEnabled(false);
             	
             	goToButton.setEnabled(true);
             	
@@ -182,10 +166,6 @@ public class ChooseDestination extends Activity {
             	istButton.setEnabled(false);
             	eliasButton.setEnabled(false);
             	bradleyButton.setEnabled(false);
-            	bistroButton.setEnabled(false);
-            	lionsDenButton.setEnabled(false);
-            	helpDeskButton.setEnabled(false);
-            	gameRoomButton.setEnabled(false);
             	
             	goToButton.setEnabled(true);
             	
@@ -202,10 +182,6 @@ public class ChooseDestination extends Activity {
             	jrrsccButton.setEnabled(false);
             	eliasButton.setEnabled(false);
             	bradleyButton.setEnabled(false);
-            	bistroButton.setEnabled(false);
-            	lionsDenButton.setEnabled(false);
-            	helpDeskButton.setEnabled(false);
-            	gameRoomButton.setEnabled(false);
             	
             	goToButton.setEnabled(true);
             	
@@ -222,10 +198,6 @@ public class ChooseDestination extends Activity {
             	jrrsccButton.setEnabled(false);
             	istButton.setEnabled(false);
             	bradleyButton.setEnabled(false);
-            	bistroButton.setEnabled(false);
-            	lionsDenButton.setEnabled(false);
-            	helpDeskButton.setEnabled(false);
-            	gameRoomButton.setEnabled(false);
             	
             	goToButton.setEnabled(true);
             	
@@ -242,97 +214,13 @@ public class ChooseDestination extends Activity {
             	jrrsccButton.setEnabled(false);
             	istButton.setEnabled(false);
             	eliasButton.setEnabled(false);
-            	bistroButton.setEnabled(false);
-            	lionsDenButton.setEnabled(false);
-            	helpDeskButton.setEnabled(false);
-            	gameRoomButton.setEnabled(false);
             	
             	goToButton.setEnabled(true);
             	
             	buildingSelected = "BRADLEY BUILDING"; 
             }
-        });
-		
-		bistroButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            	
-            	mcbButton.setEnabled(false);
-            	pulloButton.setEnabled(false);
-            	jrrsccButton.setEnabled(false);
-            	istButton.setEnabled(false);
-            	eliasButton.setEnabled(false);
-            	bradleyButton.setEnabled(false);
-            	lionsDenButton.setEnabled(false);
-            	helpDeskButton.setEnabled(false);
-            	gameRoomButton.setEnabled(false);
-            	
-            	goToButton.setEnabled(true);
-            	
-            	buildingSelected = "PULLO CENTER (PAC)"; 
-            }
-        });
-
-		lionsDenButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            	
-            	mcbButton.setEnabled(false);
-            	pulloButton.setEnabled(false);
-            	jrrsccButton.setEnabled(false);
-            	istButton.setEnabled(false);
-            	eliasButton.setEnabled(false);
-            	bradleyButton.setEnabled(false);
-            	bistroButton.setEnabled(false);
-            	helpDeskButton.setEnabled(false);
-            	gameRoomButton.setEnabled(false);
-            	
-            	goToButton.setEnabled(true);
-            	
-            	buildingSelected = "JRR STUDENT COMM. CNTR"; 
-            }
-        });
-		
-		helpDeskButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            	
-            	mcbButton.setEnabled(false);
-            	pulloButton.setEnabled(false);
-            	jrrsccButton.setEnabled(false);
-            	istButton.setEnabled(false);
-            	eliasButton.setEnabled(false);
-            	bradleyButton.setEnabled(false);
-            	bistroButton.setEnabled(false);
-            	lionsDenButton.setEnabled(false);
-            	gameRoomButton.setEnabled(false);
-            	
-            	goToButton.setEnabled(true);
-            	
-            	buildingSelected = "GRUMBACHER ISTC"; 
-            }
-        });
-		
-		gameRoomButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            	
-            	mcbButton.setEnabled(false);
-            	pulloButton.setEnabled(false);
-            	jrrsccButton.setEnabled(false);
-            	istButton.setEnabled(false);
-            	eliasButton.setEnabled(false);
-            	bradleyButton.setEnabled(false);
-            	bistroButton.setEnabled(false);
-            	lionsDenButton.setEnabled(false);
-            	helpDeskButton.setEnabled(false);
-            	
-            	goToButton.setEnabled(true);
-            	
-            	buildingSelected = "JRR STUDENT COMM. CNTR"; 
-            }
-        });
-		
+        });	
+				
 	}
 	
 	

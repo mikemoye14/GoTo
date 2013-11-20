@@ -105,37 +105,7 @@
                 android:text="@string/bradley"
                 android:textColor="@color/white" />
 
-            <Button
-                android:id="@+id/bistroDestinationButton"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:drawableRight="@drawable/star"
-                android:text="@string/bistro"
-                android:textColor="@color/white" />
-
-            <Button
-                android:id="@+id/lionsDenDestinationButton"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:drawableRight="@drawable/star"
-                android:text="@string/lions_den"
-                android:textColor="@color/white" />
-
-            <Button
-                android:id="@+id/helpDeskDestinationButton"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:drawableRight="@drawable/star"
-                android:text="@string/help_desk"
-                android:textColor="@color/white" />
-
-            <Button
-                android:id="@+id/gameRoomDestinationButton"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:drawableRight="@drawable/star"
-                android:text="@string/game_room"
-                android:textColor="@color/white" />
+            
         </TableLayout>
     </ScrollView>
 
