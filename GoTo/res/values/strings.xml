@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GoTo</string>
+    <string name="scan">Scan</string>
+    <string name="scan_resut_lable">Scan Result:</string>
+    <string name="get_directions">GET DIRECTIONS</string>
+    <string name="get_information">GET INFORMATION</string>
+    <string name="about">ABOUT</string>
+
+    <color name="white">#ffffff</color>
+
+    <string name="logo">GoTo Logo</string>
+    <string name="title_activity_building_list">Penn State York Locations</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="mcb_rab">MCB/RAB</string>
+    <string name="pullo_center">PULLO CENTER (PAC)</string>
+    <string name="jrrscc">JRR STUDENT COMM. CNTR</string>
+    <string name="istc">GRUMBACHER ISTC</string>
+    <string name="elias">SCIENCE BUILDING (ELIAS)</string>
+    <string name="bradley">BRADLEY BUILDING</string>
+    <string name="lions_den">LIONS DEN (CAFETERIA)</string>
+    <string name="help_desk">HELP DESK</string>
+    <string name="clear">CLEAR</string>
+    <string name="bistro">BISTRO @ PULLO</string>
+    <string name="building_list_label">Select One for Information:</string>
+    <string name="title_activity_building_info">Building Info</string>
+    <string name="building_selected">buildingSelected</string>
+    <string name="main_menu">MAIN MENU</string>
+    <string name="new_building">NEW BUILDING</string>
+    <string name="building_summary">buildingSummary</string>
+    <string name="title_activity_get_directions">Get Directions</string>
+    <string name="you_are_at">You are at:</string>
+    <string name="current_location">currentLocation</string>
+    <string name="select_destination">Select Destination:</string>
+    <string name="re_scan">RE-SCAN</string>
+    <string name="go_to">GoTo</string>
+    <string name="game_room">GAME ROOM</string>
+    <string name="title_activity_wrong_qrcode">Wrong QR Code</string>
+    <string name="wrong_qr_code">WRONG QR CODE</string>
+    <string name="wron_qr_code_msg">The QR code you scanned was not a  GoTo QR code. Please scan a GoTo QR code.</string>
+    <string name="directions">Directions:</string>
+    <string name="from">From</string>
+    <string name="beginning">Beginnging</string>
+    <string name="destination">destination</string>
+    <string name="to">to</string>
+    <string name="new_destination">NEW DESTINATION</string>
+
+</resources>
