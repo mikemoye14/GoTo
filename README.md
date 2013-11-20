@@ -27,15 +27,18 @@ Penn State GoTo
 
 <strong>Scope Penn State York Map Quest 1.0 Text Only version</strong>
 
-How to go from source to destination
-Information about Building What app v1.0 will do
-Open the app
-Press the scan button
-Scan the QR code
-The app will tell you where you are and what is there in the building
-Drop Down menu for destination
-select the destination from the Drop down menu
-then app will present Text directions from the source to destination
+<ul>
+<li>How to go from source to destination</li>
+<li>Information about Building What app v1.0 will do</li>
+<li>Open the app</li>
+<li>Press the scan button</li>
+<li>Scan the QR code</li>
+<li>The app will tell you where you are and what is there in the building</li>
+<li>Drop Down menu for destination</li>
+<li>Select the destination from the Drop down menu</li>
+<li>Then app will present Text directions from the source to destination.</li>
+</ul>
+
 Responsibilities Jimil, Mike - Find out about branches in Google Code. Chinmay - Everyday at a certain time, checkout and build. Siddharth, Mike - API for QR codes. Dependencies. Rohit, Dhaval, Mike - Database design.. Linking database. Research apps that use db. Merriam Webster Martin- Research gestures that are supported on camera screen and normal screen. Oakes - Research on requirements for releasing the app on the play store. Saylean
 
 <strong>Design to be wrapped up by October 8, 2013.</strong>
