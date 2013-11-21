@@ -9,5 +9,6 @@
 	<classpathentry exported="true" kind="lib" path="/ZXingLib/bin/zxinglib.jar"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/AndroidBootstrap"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
