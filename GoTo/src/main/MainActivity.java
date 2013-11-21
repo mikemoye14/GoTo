@@ -1,6 +1,8 @@
 package main;
 
 import jim.h.common.android.lib.zxing.config.ZXingLibConfig;
+import com.beardedhen.androidbootstrap.BootstrapButton;
+import com.beardedhen.androidbootstrap.FontAwesomeText;
 import jim.h.common.android.lib.zxing.integrator.IntentIntegrator;
 import jim.h.common.android.lib.zxing.integrator.IntentResult;
 import jim.h.common.android.lib.zxing.sample.R;
@@ -36,9 +38,9 @@ public class MainActivity extends Activity {
         zxingLibConfig = new ZXingLibConfig();
         zxingLibConfig.useFrontLight = true;
 
-        View btnScan = findViewById(R.id.scan_button);
-        View getInfoButton = findViewById(R.id.getInfoButton);
-        View aboutButton = findViewById(R.id.aboutButton);
+        final BootstrapButton  btnScan = (BootstrapButton )findViewById(R.id.scan_button);
+        final BootstrapButton getInfoButton = (BootstrapButton )findViewById(R.id.getInfoButton);
+        final BootstrapButton aboutButton =(BootstrapButton ) findViewById(R.id.aboutButton);
         
         final AlertDialog.Builder aboutPopUp = new AlertDialog.Builder(this)
                 .setTitle("About")
@@ -49,9 +51,9 @@ public class MainActivity extends Activity {
                     }
                  });
 		
-        btnScan.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
-        getInfoButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
-        aboutButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
+        //btnScan.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
+       // getInfoButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
+        //aboutButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
                 
         // æ‰«æ��æŒ‰é’®
         btnScan.setOnClickListener(new OnClickListener() {

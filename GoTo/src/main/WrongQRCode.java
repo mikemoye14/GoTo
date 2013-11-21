@@ -1,8 +1,10 @@
 package main;
 
+import com.beardedhen.androidbootstrap.BootstrapButton;
 import jim.h.common.android.lib.zxing.sample.R;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.LightingColorFilter;
 import android.view.Menu;
@@ -28,8 +30,10 @@ public class WrongQRCode extends Activity {
 		//zxingLibConfig = new ZXingLibConfig();
         //zxingLibConfig.useFrontLight = true;
         
-        Button reScanButton = (Button) findViewById(R.id.rescanButton);    	
-		reScanButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
+        final BootstrapButton reScanButton = (BootstrapButton) findViewById(R.id.wrongQRCodeRescanButton);    
+        final BootstrapButton mainmenuButton = (BootstrapButton) findViewById(R.id.wrongQRCodemainmenuButton);    	
+
+		//reScanButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
 		
 		
 		reScanButton.setOnClickListener(new OnClickListener() {
@@ -39,6 +43,14 @@ public class WrongQRCode extends Activity {
             	//IntentIntegrator.initiateScan(WrongQRCode.this, zxingLibConfig);
             }
         });
+		
+	//	mainmenuButton.setOnClickListener(new OnClickListener() {
+    //        @Override
+     //       public void onClick(View v) {
+     //       	Intent intent= new Intent(WrongQRCode.this, MainActivity.class);
+     //           startActivity(intent);
+     //       }
+      //  });
 		
     }
 
