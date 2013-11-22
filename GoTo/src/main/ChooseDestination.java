@@ -1,5 +1,6 @@
 package main;
 
+import com.beardedhen.androidbootstrap.BootstrapButton;
 import jim.h.common.android.lib.zxing.config.ZXingLibConfig;
 import jim.h.common.android.lib.zxing.integrator.IntentIntegrator;
 import jim.h.common.android.lib.zxing.integrator.IntentResult;
@@ -10,11 +11,11 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.LightingColorFilter;
+//import android.graphics.LightingColorFilter;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+//import android.widget.Button;
 
 @SuppressLint("DefaultLocale")
 public class ChooseDestination extends Activity {
@@ -43,32 +44,21 @@ public class ChooseDestination extends Activity {
         
         scanResult = getIntent().getStringExtra("scanResult").toUpperCase();
         
-        final Button mcbButton = (Button) findViewById(R.id.mcb_rabDestinationButton);
-    	final Button pulloButton = (Button) findViewById(R.id.pulloDestinationButton);
-    	final Button jrrsccButton = (Button) findViewById(R.id.jrrsccDestinationButton);
-    	final Button istButton = (Button) findViewById(R.id.istDestinationButton);
-    	final Button eliasButton = (Button) findViewById(R.id.eliasDestinationButton);
-    	final Button bradleyButton = (Button) findViewById(R.id.bradleyDestinationButton);
+        final BootstrapButton mcbButton = (BootstrapButton) findViewById(R.id.mcb_rabDestinationButton);
+    	final BootstrapButton pulloButton = (BootstrapButton) findViewById(R.id.pulloDestinationButton);
+    	final BootstrapButton jrrsccButton = (BootstrapButton) findViewById(R.id.jrrsccDestinationButton);
+    	final BootstrapButton istButton = (BootstrapButton) findViewById(R.id.istDestinationButton);
+    	final BootstrapButton eliasButton = (BootstrapButton) findViewById(R.id.eliasDestinationButton);
+    	final BootstrapButton bradleyButton = (BootstrapButton) findViewById(R.id.bradleyDestinationButton);
 
-    	final Button goToButton = (Button) findViewById(R.id.goToButton);	
-    	Button currentLocationButton = (Button) findViewById(R.id.currentLocatonButton);
-    	Button clearButton = (Button) findViewById(R.id.clearButton);
-    	Button reScanButton = (Button) findViewById(R.id.rescanButton);
-    	currentLocationButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));		
-		mcbButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
-		pulloButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
-		jrrsccButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
-		istButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
-		eliasButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
-		bradleyButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
-		
-		reScanButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
-		goToButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
-		clearButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
-		
+    	final BootstrapButton goToButton = (BootstrapButton) findViewById(R.id.goToButton);	
+    	final BootstrapButton currentLocationButton = (BootstrapButton) findViewById(R.id.currentLocatonButton);
+    	final BootstrapButton clearButton = (BootstrapButton) findViewById(R.id.clearButton);
+    	final BootstrapButton reScanButton = (BootstrapButton) findViewById(R.id.rescanButton);
+    	
 		currentLocationButton.setText(scanResult);
 		
-		goToButton.setEnabled(false);
+		goToButton.setBootstrapButtonEnabled(false);
 		
 		reScanButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -95,14 +85,14 @@ public class ChooseDestination extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	mcbButton.setEnabled(true);
-            	pulloButton.setEnabled(true);
-            	jrrsccButton.setEnabled(true);
-            	istButton.setEnabled(true);
-            	eliasButton.setEnabled(true);
-            	bradleyButton.setEnabled(true);
+            	mcbButton.setBootstrapButtonEnabled(true);
+            	pulloButton.setBootstrapButtonEnabled(true);
+            	jrrsccButton.setBootstrapButtonEnabled(true);
+            	istButton.setBootstrapButtonEnabled(true);
+            	eliasButton.setBootstrapButtonEnabled(true);
+            	bradleyButton.setBootstrapButtonEnabled(true);
             	
-            	goToButton.setEnabled(false);
+            	goToButton.setBootstrapButtonEnabled(false);
             }
         });
 		
@@ -124,13 +114,13 @@ public class ChooseDestination extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	pulloButton.setEnabled(false);
-            	jrrsccButton.setEnabled(false);
-            	istButton.setEnabled(false);
-            	eliasButton.setEnabled(false);
-            	bradleyButton.setEnabled(false);
+            	pulloButton.setBootstrapButtonEnabled(false);
+            	jrrsccButton.setBootstrapButtonEnabled(false);
+            	istButton.setBootstrapButtonEnabled(false);
+            	eliasButton.setBootstrapButtonEnabled(false);
+            	bradleyButton.setBootstrapButtonEnabled(false);
             	
-            	goToButton.setEnabled(true);
+            	goToButton.setBootstrapButtonEnabled(true);
             	
             	buildingSelected = "MCB/RAB"; 
             }
@@ -140,13 +130,13 @@ public class ChooseDestination extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	mcbButton.setEnabled(false);
-            	jrrsccButton.setEnabled(false);
-            	istButton.setEnabled(false);
-            	eliasButton.setEnabled(false);
-            	bradleyButton.setEnabled(false);
+            	mcbButton.setBootstrapButtonEnabled(false);
+            	jrrsccButton.setBootstrapButtonEnabled(false);
+            	istButton.setBootstrapButtonEnabled(false);
+            	eliasButton.setBootstrapButtonEnabled(false);
+            	bradleyButton.setBootstrapButtonEnabled(false);
             	
-            	goToButton.setEnabled(true);
+            	goToButton.setBootstrapButtonEnabled(true);
             	
             	buildingSelected = "PULLO CENTER (PAC)"; 
             }
@@ -156,13 +146,13 @@ public class ChooseDestination extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	mcbButton.setEnabled(false);
-            	pulloButton.setEnabled(false);
-            	istButton.setEnabled(false);
-            	eliasButton.setEnabled(false);
-            	bradleyButton.setEnabled(false);
+            	mcbButton.setBootstrapButtonEnabled(false);
+            	pulloButton.setBootstrapButtonEnabled(false);
+            	istButton.setBootstrapButtonEnabled(false);
+            	eliasButton.setBootstrapButtonEnabled(false);
+            	bradleyButton.setBootstrapButtonEnabled(false);
             	
-            	goToButton.setEnabled(true);
+            	goToButton.setBootstrapButtonEnabled(true);
             	
             	buildingSelected = "JRR STUDENT COMM. CNTR"; 
             }
@@ -172,13 +162,13 @@ public class ChooseDestination extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	mcbButton.setEnabled(false);
-            	pulloButton.setEnabled(false);
-            	jrrsccButton.setEnabled(false);
-            	eliasButton.setEnabled(false);
-            	bradleyButton.setEnabled(false);
+            	mcbButton.setBootstrapButtonEnabled(false);
+            	pulloButton.setBootstrapButtonEnabled(false);
+            	jrrsccButton.setBootstrapButtonEnabled(false);
+            	eliasButton.setBootstrapButtonEnabled(false);
+            	bradleyButton.setBootstrapButtonEnabled(false);
             	
-            	goToButton.setEnabled(true);
+            	goToButton.setBootstrapButtonEnabled(true);
             	
             	buildingSelected = "GRUMBACHER ISTC"; 
             }
@@ -188,13 +178,13 @@ public class ChooseDestination extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	mcbButton.setEnabled(false);
-            	pulloButton.setEnabled(false);
-            	jrrsccButton.setEnabled(false);
-            	istButton.setEnabled(false);
-            	bradleyButton.setEnabled(false);
+            	mcbButton.setBootstrapButtonEnabled(false);
+            	pulloButton.setBootstrapButtonEnabled(false);
+            	jrrsccButton.setBootstrapButtonEnabled(false);
+            	istButton.setBootstrapButtonEnabled(false);
+            	bradleyButton.setBootstrapButtonEnabled(false);
             	
-            	goToButton.setEnabled(true);
+            	goToButton.setBootstrapButtonEnabled(true);
             	
             	buildingSelected = "SCIENCE BUILDING (ELIAS)"; 
             }
@@ -204,13 +194,13 @@ public class ChooseDestination extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	mcbButton.setEnabled(false);
-            	pulloButton.setEnabled(false);
-            	jrrsccButton.setEnabled(false);
-            	istButton.setEnabled(false);
-            	eliasButton.setEnabled(false);
+            	mcbButton.setBootstrapButtonEnabled(false);
+            	pulloButton.setBootstrapButtonEnabled(false);
+            	jrrsccButton.setBootstrapButtonEnabled(false);
+            	istButton.setBootstrapButtonEnabled(false);
+            	eliasButton.setBootstrapButtonEnabled(false);
             	
-            	goToButton.setEnabled(true);
+            	goToButton.setBootstrapButtonEnabled(true);
             	
             	buildingSelected = "BRADLEY BUILDING"; 
             }

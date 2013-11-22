@@ -1,10 +1,13 @@
 package main;
 
 import jim.h.common.android.lib.zxing.sample.R;
+
+import com.beardedhen.androidbootstrap.BootstrapButton;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.LightingColorFilter;
+//import android.graphics.LightingColorFilter;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -21,35 +24,26 @@ public class BuildingList extends Activity {
 		
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		
-		View mcbButton = findViewById(R.id.mcb_rabButton);		
-		mcbButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
+		final BootstrapButton mcbButton = (BootstrapButton) findViewById(R.id.mcb_rabButton);		
 		
-		View pulloButton = findViewById(R.id.pulloButton);		
-		pulloButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
+		final BootstrapButton pulloButton = (BootstrapButton) findViewById(R.id.pulloButton);		
 		
-		View jrrsccButton = findViewById(R.id.jrrsccButton);		
-		jrrsccButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
+		final BootstrapButton jrrsccButton = (BootstrapButton) findViewById(R.id.jrrsccButton);		
 		
-		View istButton = findViewById(R.id.istButton);		
-		istButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
+		final BootstrapButton istButton = (BootstrapButton) findViewById(R.id.istButton);		
 		
-		View eliasButton = findViewById(R.id.eliasButton);		
-		eliasButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
+		final BootstrapButton eliasButton = (BootstrapButton) findViewById(R.id.eliasButton);		
 		
-		View bradleyButton = findViewById(R.id.bradleyButton);		
-		bradleyButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
+		final BootstrapButton bradleyButton = (BootstrapButton) findViewById(R.id.bradleyButton);		
 		
-		View bistroButton = findViewById(R.id.bistroButton);		
-		bistroButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
+		final BootstrapButton bistroButton = (BootstrapButton) findViewById(R.id.bistroButton);		
 		
-		View lionsDenButton = findViewById(R.id.lionsDenButton);		
-		lionsDenButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
+		final BootstrapButton lionsDenButton = (BootstrapButton) findViewById(R.id.lionsDenButton);		
 		
-		View helpDeskButton = findViewById(R.id.helpDeskButton);		
-		helpDeskButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
+		final BootstrapButton helpDeskButton = (BootstrapButton) findViewById(R.id.helpDeskButton);		
 		
-		View gameRoomButton = findViewById(R.id.gameRoomButton);		
-		gameRoomButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
+		final BootstrapButton gameRoomButton = (BootstrapButton) findViewById(R.id.gameRoomButton);		
+		gameRoomButton.setRightIcon("fa-star");
 		
 		mcbButton.setOnClickListener(new OnClickListener() {
             @Override

@@ -1,16 +1,18 @@
 package main;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
+
 import jim.h.common.android.lib.zxing.sample.R;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+//import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.LightingColorFilter;
+//import android.graphics.LightingColorFilter;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+//import android.widget.Button;
 
 public class WrongQRCode extends Activity {
 	
@@ -44,13 +46,13 @@ public class WrongQRCode extends Activity {
             }
         });
 		
-	//	mainmenuButton.setOnClickListener(new OnClickListener() {
-    //        @Override
-     //       public void onClick(View v) {
-     //       	Intent intent= new Intent(WrongQRCode.this, MainActivity.class);
-     //           startActivity(intent);
-     //       }
-      //  });
+		mainmenuButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            	Intent intent= new Intent(WrongQRCode.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 		
     }
 

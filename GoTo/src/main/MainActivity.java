@@ -2,7 +2,7 @@ package main;
 
 import jim.h.common.android.lib.zxing.config.ZXingLibConfig;
 import com.beardedhen.androidbootstrap.BootstrapButton;
-import com.beardedhen.androidbootstrap.FontAwesomeText;
+//import com.beardedhen.androidbootstrap.FontAwesomeText;
 import jim.h.common.android.lib.zxing.integrator.IntentIntegrator;
 import jim.h.common.android.lib.zxing.integrator.IntentResult;
 import jim.h.common.android.lib.zxing.sample.R;
@@ -12,7 +12,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.LightingColorFilter;
+//import android.graphics.LightingColorFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -38,9 +38,9 @@ public class MainActivity extends Activity {
         zxingLibConfig = new ZXingLibConfig();
         zxingLibConfig.useFrontLight = true;
 
-        final BootstrapButton  btnScan = (BootstrapButton )findViewById(R.id.scan_button);
-        final BootstrapButton getInfoButton = (BootstrapButton )findViewById(R.id.getInfoButton);
-        final BootstrapButton aboutButton =(BootstrapButton ) findViewById(R.id.aboutButton);
+        final BootstrapButton  btnScan = (BootstrapButton)findViewById(R.id.scan_button);
+        final BootstrapButton getInfoButton = (BootstrapButton)findViewById(R.id.getInfoButton);
+        final BootstrapButton aboutButton = (BootstrapButton) findViewById(R.id.aboutButton);
         
         final AlertDialog.Builder aboutPopUp = new AlertDialog.Builder(this)
                 .setTitle("About")

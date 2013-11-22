@@ -1,5 +1,7 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bootstrapbutton="http://schemas.android.com/apk/res-auto"
+    xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
     android:id="@+id/buildingListScroll"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -8,105 +10,175 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".BuildingList"
-    android:fadeScrollbars="false" >
+    tools:context=".BuildingList" >
 
-    <TableLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:scrollbarStyle="insideOverlay"
-        android:scrollbars="vertical" >
+	     <TextView
+	         android:id="@+id/textView1"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:height="30dp"
+	         android:text="@string/building_list_label"
+	         android:textColor="#000000" />
+	     
+	     <ScrollView
+	         android:layout_width="wrap_content"
+	         android:layout_height="fill_parent"
+	         android:layout_marginLeft="10dp"
+	     	 android:layout_marginRight="10dp"
+	     	 android:layout_gravity="center" >
+            
+	     	<TableLayout
+	     	    android:layout_width="fill_parent"
+	     	    android:layout_height="wrap_content"
+	     	     >
+	
+	                <com.beardedhen.androidbootstrap.BootstrapButton
+	                    android:id="@+id/mcb_rabButton"
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginBottom="10dp"
+	                    android:layout_marginLeft="10dp"
+	                    android:layout_marginRight="10dp"
+	                    android:text="@string/mcb_rab"
+	                    android:textSize="12sp"
+	                    fontawesometext:bb_roundedCorners="true"
+	                    fontawesometext:bb_size="large"
+	                    fontawesometext:bb_type="primary" >
+	                </com.beardedhen.androidbootstrap.BootstrapButton>
+	
+	                <com.beardedhen.androidbootstrap.BootstrapButton
+	                    android:id="@+id/pulloButton"
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginBottom="10dp"
+	                    android:layout_marginLeft="10dp"
+	                    android:layout_marginRight="10dp"
+	                    android:text="@string/pullo_center"
+	                    android:textSize="12sp"
+	                    fontawesometext:bb_roundedCorners="true"
+	                    fontawesometext:bb_size="large"
+	                    fontawesometext:bb_type="primary" >
+	                </com.beardedhen.androidbootstrap.BootstrapButton>
+	
+	                <com.beardedhen.androidbootstrap.BootstrapButton
+	                    android:id="@+id/jrrsccButton"
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginBottom="10dp"
+	                    android:layout_marginLeft="10dp"
+	                    android:layout_marginRight="10dp"
+	                    android:text="@string/jrrscc"
+	                    android:textSize="12sp"
+	                    fontawesometext:bb_roundedCorners="true"
+	                    fontawesometext:bb_size="large"
+	                    fontawesometext:bb_type="primary" >
+	                </com.beardedhen.androidbootstrap.BootstrapButton>
+	
+	                <com.beardedhen.androidbootstrap.BootstrapButton
+	                    android:id="@+id/istButton"
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginBottom="10dp"
+	                    android:layout_marginLeft="10dp"
+	                    android:layout_marginRight="10dp"
+	                    android:text="@string/istc"
+	                    android:textSize="12sp"
+	                    fontawesometext:bb_roundedCorners="true"
+	                    fontawesometext:bb_size="large"
+	                    fontawesometext:bb_type="primary" >
+	                </com.beardedhen.androidbootstrap.BootstrapButton>
+	
+	                <com.beardedhen.androidbootstrap.BootstrapButton
+	                    android:id="@+id/eliasButton"
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginBottom="10dp"
+	                    android:layout_marginLeft="10dp"
+	                    android:layout_marginRight="10dp"
+	                    android:text="@string/elias"
+	                    android:textSize="12sp"
+	                    fontawesometext:bb_roundedCorners="true"
+	                    fontawesometext:bb_size="large"
+	                    fontawesometext:bb_type="primary" >
+	                </com.beardedhen.androidbootstrap.BootstrapButton>
+	
+	                <com.beardedhen.androidbootstrap.BootstrapButton
+	                    android:id="@+id/bradleyButton"
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginBottom="10dp"
+	                    android:layout_marginLeft="10dp"
+	                    android:layout_marginRight="10dp"
+	                    android:text="@string/bradley"
+	                    android:textSize="12sp"
+	                    fontawesometext:bb_roundedCorners="true"
+	                    fontawesometext:bb_size="large"
+	                    fontawesometext:bb_type="primary" >
+	                </com.beardedhen.androidbootstrap.BootstrapButton>
+	
+	                <com.beardedhen.androidbootstrap.BootstrapButton
+	                    android:id="@+id/bistroButton"
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginBottom="10dp"
+	                    android:layout_marginLeft="10dp"
+	                    android:layout_marginRight="10dp"
+	                    android:text="@string/bistro"
+	                    android:textSize="12sp"
+	                    bootstrapbutton:bb_icon_right="fa-star"
+	                    fontawesometext:bb_roundedCorners="true"
+	                    fontawesometext:bb_size="large"
+	                    fontawesometext:bb_type="primary" >
+	                </com.beardedhen.androidbootstrap.BootstrapButton>
+	
+	                <com.beardedhen.androidbootstrap.BootstrapButton
+	                    android:id="@+id/lionsDenButton"
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginBottom="10dp"
+	                    android:layout_marginLeft="10dp"
+	                    android:layout_marginRight="10dp"
+	                    android:text="@string/lions_den"
+	                    android:textSize="12sp"
+	                    bootstrapbutton:bb_icon_right="fa-star"	                    
+	                    fontawesometext:bb_roundedCorners="true"
+	                    fontawesometext:bb_size="large"
+	                    fontawesometext:bb_type="primary" >
+	                </com.beardedhen.androidbootstrap.BootstrapButton>
+	
+	                <com.beardedhen.androidbootstrap.BootstrapButton
+	                    android:id="@+id/helpDeskButton"
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginBottom="10dp"
+	                    android:layout_marginLeft="10dp"
+	                    android:layout_marginRight="10dp"
+	                    android:text="@string/help_desk"
+	                    android:textSize="12sp"
+	                    bootstrapbutton:bb_icon_right="fa-star"
+	                    fontawesometext:bb_roundedCorners="true"
+	                    fontawesometext:bb_size="large"
+	                    fontawesometext:bb_type="primary" >
+	                </com.beardedhen.androidbootstrap.BootstrapButton>
+	
+	                <com.beardedhen.androidbootstrap.BootstrapButton
+	                    android:id="@+id/gameRoomButton"
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginBottom="10dp"
+	                    android:layout_marginLeft="10dp"
+	                    android:layout_marginRight="10dp"
+	                    android:text="@string/game_room"
+	                    android:textColor="#FFFF00"
+	                    bootstrapbutton:bb_icon_right="fa-star"
+	                    android:textSize="12sp"
+	                    fontawesometext:bb_roundedCorners="true"
+	                    fontawesometext:bb_size="large"
+	                    fontawesometext:bb_type="primary" >
+	                </com.beardedhen.androidbootstrap.BootstrapButton>
+	                
+		</TableLayout>
+		
+	</ScrollView>
 
-        <TableRow
-            android:id="@+id/tableRow1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:height="30dp"
-                android:text="@string/building_list_label"
-                android:textColor="#000000" />
-
-        </TableRow>
-        
-        <Button
-            android:id="@+id/mcb_rabButton"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/mcb_rab"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/pulloButton"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/pullo_center"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/jrrsccButton"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/jrrscc"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/istButton"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/istc"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/eliasButton"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/elias"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/bradleyButton"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/bradley"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/bistroButton"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:drawableRight="@drawable/star"
-            android:text="@string/bistro"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/lionsDenButton"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:drawableRight="@drawable/star"
-            android:text="@string/lions_den"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/helpDeskButton"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:drawableRight="@drawable/star"
-            android:text="@string/help_desk"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/gameRoomButton"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:drawableRight="@drawable/star"
-            android:text="@string/game_room"
-            android:textColor="@color/white" />
-
-    </TableLayout>
-
-</ScrollView>
+</TableLayout>

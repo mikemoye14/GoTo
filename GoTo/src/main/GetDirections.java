@@ -4,16 +4,17 @@ import jim.h.common.android.lib.zxing.config.ZXingLibConfig;
 import jim.h.common.android.lib.zxing.integrator.IntentIntegrator;
 import jim.h.common.android.lib.zxing.integrator.IntentResult;
 import jim.h.common.android.lib.zxing.sample.R;
+import com.beardedhen.androidbootstrap.BootstrapButton;
 import android.os.Bundle;
 import android.os.Handler;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.LightingColorFilter;
+//import android.graphics.LightingColorFilter;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+//import android.widget.Button;
 import android.widget.TextView;
 
 public class GetDirections extends Activity {
@@ -36,13 +37,14 @@ public class GetDirections extends Activity {
         
         TextView toFrom = (TextView) findViewById(R.id.toFromTextView);
         
-        toFrom.setText("From " + ChooseDestination.getDestination() + " to " + ChooseDestination.getBeginning());
+        toFrom.setText("From: " + ChooseDestination.getDestination() + " \nTo: " + ChooseDestination.getBeginning());
                
-        View newDestinationButton = (Button) findViewById(R.id.newDestinationButton);
-    	View reScanDirectionsButton = (Button) findViewById(R.id.reScanDirectionsButton);
+        final BootstrapButton newDestinationButton = (BootstrapButton) findViewById(R.id.newDestinationButton);
+        final BootstrapButton reScanDirectionsButton = (BootstrapButton) findViewById(R.id.reScanDirectionsButton);
+        final BootstrapButton mainmenuButton = (BootstrapButton) findViewById(R.id.mainMenuButton);
     	
-    	reScanDirectionsButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
-        newDestinationButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
+    	//reScanDirectionsButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
+        //newDestinationButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
        
         
         reScanDirectionsButton.setOnClickListener(new OnClickListener() {
@@ -67,6 +69,18 @@ public class GetDirections extends Activity {
             }
         });
         
+        mainmenuButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            	Intent intent = new Intent(GetDirections.this, MainActivity.class);
+            	
+            	intent.putExtra("scanResult", ChooseDestination.getBeginning());
+            	
+                startActivity(intent);
+            	
+            }
+        });
 	}	
 
 	@Override

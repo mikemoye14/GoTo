@@ -5,11 +5,12 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.LightingColorFilter;
+//import android.graphics.LightingColorFilter;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+import com.beardedhen.androidbootstrap.BootstrapButton;
 
 public class BuildingInfo extends Activity {	
 	
@@ -27,11 +28,11 @@ public class BuildingInfo extends Activity {
 		buildingSummary.setText(getIntent().getStringExtra("locationSelected") + " Summary");
 		
 		
-		View mainMenuButton = findViewById(R.id.mainMenuButton);
-		View newBuildingButton = findViewById(R.id.newBuildingButton);
+		final BootstrapButton mainMenuButton = (BootstrapButton) findViewById(R.id.mainMenuButton);
+		final BootstrapButton newBuildingButton = (BootstrapButton) findViewById(R.id.newBuildingButton);
 		
-		mainMenuButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
-		newBuildingButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
+		//mainMenuButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
+		//newBuildingButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
 		
 		mainMenuButton.setOnClickListener(new OnClickListener() {
             @Override

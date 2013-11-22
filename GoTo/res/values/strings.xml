@@ -25,7 +25,7 @@
     <string name="clear">CLEAR</string>
     <string name="bistro">BISTRO @ PULLO</string>
     <string name="building_list_label">Select One for Information:</string>
-    <string name="title_activity_building_info">Building Info</string>
+    <string name="title_activity_building_info">Building Information</string>
     <string name="building_selected">buildingSelected</string>
     <string name="main_menu">MAIN MENU</string>
     <string name="new_building">NEW BUILDING</string>

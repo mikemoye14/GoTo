@@ -1,4 +1,6 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bootstrapbutton="http://schemas.android.com/apk/res-auto"
+	xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
@@ -13,7 +15,6 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:text="@string/directions"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000" />
@@ -38,21 +39,22 @@
         android:id="@+id/topRule"
         android:layout_width="fill_parent"
         android:layout_height="1dp"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
         android:background="#000000" />
 
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="fill_parent"
         android:layout_height="250dp"
-        android:layout_marginTop="10dp" >
+        android:layout_margin="10dp" >
 
         <TextView
             android:id="@+id/directions"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:height="350dp"
             android:text="@string/directions"
+            android:layout_margin="5dp"
             android:textColor="#000000" />
 
     </ScrollView>
@@ -61,21 +63,45 @@
         android:id="@+id/View01"
         android:layout_width="fill_parent"
         android:layout_height="1dp"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
         android:background="#000000" />
-
-    <Button
-        android:id="@+id/newDestinationButton"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/new_destination"
-        android:textColor="@color/white" />
-
-    <Button
-        android:id="@+id/reScanDirectionsButton"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/re_scan"
-        android:textColor="@color/white" />
+    
+    <com.beardedhen.androidbootstrap.BootstrapButton
+	    android:id="@+id/newDestinationButton"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/new_destination"
+	    android:textSize="12sp"
+	    android:layout_marginLeft="20dp"
+	    android:layout_marginRight="20dp"
+	    android:layout_marginBottom="10dp"
+	    bootstrapbutton:bb_roundedCorners="true"
+	    bootstrapbutton:bb_size="medium"
+	    bootstrapbutton:bb_type="primary" />
+    
+    <com.beardedhen.androidbootstrap.BootstrapButton
+	    android:id="@+id/reScanDirectionsButton"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/re_scan"
+	    android:textSize="12sp"
+	    android:layout_marginLeft="20dp"
+	    android:layout_marginRight="20dp"
+	    android:layout_marginBottom="10dp"
+	    bootstrapbutton:bb_roundedCorners="true"
+	    bootstrapbutton:bb_size="medium"
+	    bootstrapbutton:bb_type="primary" />
+    
+    <com.beardedhen.androidbootstrap.BootstrapButton
+	    android:id="@+id/mainMenuButton"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/main_menu"
+	    android:textSize="12sp"
+	    android:layout_marginLeft="20dp"
+	    android:layout_marginRight="20dp"
+	    bootstrapbutton:bb_roundedCorners="true"
+	    bootstrapbutton:bb_size="medium"
+	    bootstrapbutton:bb_type="primary" />
 
 </TableLayout>

@@ -2,7 +2,7 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:bootstrapbutton="http://schemas.android.com/apk/res-auto"
-xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
+	xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -20,7 +20,7 @@ xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
 
 	    <View
 	        android:layout_width="1dp"
-	        android:layout_height="49dp" >
+	        android:layout_height="20dp" >
 	    </View>
 
 	    <TableRow
@@ -34,11 +34,12 @@ xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
 	        android:layout_width="192dp"
 	        android:layout_height="192dp"
 	        android:contentDescription="@string/logo"
-	        android:src="@drawable/logo" />
+	        android:src="@drawable/logo"
+	        android:layout_margin="20dp" />
 
 	    <View
 	        android:layout_width="1dp"
-	        android:layout_height="50dp" >
+	        android:layout_height="30dp" >
 	    </View>
 <!--
 	    <Button
@@ -54,10 +55,10 @@ xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
 	        android:id="@+id/scan_button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="@string/get_directions"
+	        android:layout_marginBottom="20dp"
 	        android:layout_marginLeft="20dp"
 	        android:layout_marginRight="20dp"
-	        android:layout_marginBottom="10dp"
+	        android:text="@string/get_directions"
 	        android:textSize="12sp"
 	        bootstrapbutton:bb_roundedCorners="true"
 	        bootstrapbutton:bb_size="large"
@@ -78,10 +79,10 @@ xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
 	        android:id="@+id/getInfoButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="@string/get_information"
-	        android:layout_marginBottom="10dp"
+	        android:layout_marginBottom="20dp"
 	        android:layout_marginLeft="20dp"
 	        android:layout_marginRight="20dp"
+	        android:text="@string/get_information"
 	        android:textSize="12sp"
 	        bootstrapbutton:bb_roundedCorners="true"
 	        bootstrapbutton:bb_size="large"
@@ -107,7 +108,7 @@ xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
 	    android:text="@string/about"
 	    android:textSize="12sp"
 	    android:layout_marginLeft="20dp"
-	        android:layout_marginRight="20dp"
+	    android:layout_marginRight="20dp"
 	    bootstrapbutton:bb_roundedCorners="true"
 	    bootstrapbutton:bb_size="large"
 	    bootstrapbutton:bb_type="primary" />
