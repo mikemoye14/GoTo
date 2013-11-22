@@ -1,26 +1,35 @@
 package main;
 
+import jim.h.common.android.lib.zxing.config.ZXingLibConfig;
+
 import com.beardedhen.androidbootstrap.BootstrapButton;
 
+
+//import com.beardedhen.androidbootstrap.FontAwesomeText;
+import jim.h.common.android.lib.zxing.integrator.IntentIntegrator;
+import jim.h.common.android.lib.zxing.integrator.IntentResult;
 import jim.h.common.android.lib.zxing.sample.R;
-import android.os.Bundle;
+//import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-//import android.content.Intent;
 import android.content.pm.ActivityInfo;
 //import android.graphics.LightingColorFilter;
+import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-//import android.widget.Button;
+//import android.widget.TextView;
 
 public class WrongQRCode extends Activity {
 	
-	//private Handler        handler = new Handler();
+	private Handler        handler = new Handler();
     //private TextView       txtScanResult;
-    //private ZXingLibConfig zxingLibConfig;
+    private ZXingLibConfig zxingLibConfig;
     
-   // private String scanResultTxt;
+    private String scanResultTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +51,7 @@ public class WrongQRCode extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	//IntentIntegrator.initiateScan(WrongQRCode.this, zxingLibConfig);
+            	IntentIntegrator.initiateScan(WrongQRCode.this, zxingLibConfig);
             }
         });
 		
@@ -63,15 +72,19 @@ public class WrongQRCode extends Activity {
         getMenuInflater().inflate(R.menu.wrong_qrcode, menu);
         return true;
     }
-    /*
+    
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case IntentIntegrator.REQUEST_CODE: // æ‰«æ��ç»“æžœ
                 IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode,
                         resultCode, data);
-                if (scanResult == null) {
+                if (scanResult == null || scanResult.getContents() == "" || scanResult.getContents() == null) {
+                	
+                	showQRCodeError();
                     return;
+                    
                 }
                 final String result = scanResult.getContents();
                 if (result != null) {
@@ -81,19 +94,64 @@ public class WrongQRCode extends Activity {
                         	
                         	scanResultTxt = result;
                         	
-                        	Intent intent= new Intent(WrongQRCode.this, GetDirections.class);
+                        	validateQRCode();                        	
                         	
-                        	intent.putExtra("scanResult", scanResultTxt);
-                        	
-                            startActivity(intent);
-                        	
-                           // txtScanResult.setText(result);
                         }
                     });
                 }
                 break;
             default:
-        }
+        }        
+        
+    }    
+    
+    private void showQRCodeError(){		
+		
+		final AlertDialog.Builder qrCodeErrorPopUp = new AlertDialog.Builder(this)
+	    .setTitle("QR Code Error")
+	    .setMessage("There seems to have been an error while scanning the QR Code. \n\nA team of highly trained monkeys has been dispatched to deal with this situation.")
+	    .setPositiveButton("Scan Again.", new DialogInterface.OnClickListener() {
+	        public void onClick(DialogInterface dialog, int which) { 
+	        	IntentIntegrator.initiateScan(WrongQRCode.this, zxingLibConfig);
+	        }
+	     })
+	     .setNegativeButton("Quit.", new DialogInterface.OnClickListener() {
+	        public void onClick(DialogInterface dialog, int which) { 
+	        	Intent intent= new Intent(WrongQRCode.this, MainActivity.class);
+	            startActivity(intent);
+	        }
+	     });
+		
+		qrCodeErrorPopUp.show();
+		
+	}
+    
+    private void validateQRCode(){
+    	
+    	if(
+    			scanResultTxt.equalsIgnoreCase("GRUMBACHER ISTC")
+	    		|| scanResultTxt.equalsIgnoreCase("MCB/RAB")
+	    		|| scanResultTxt.equalsIgnoreCase("PULLO CENTER (PAC)")
+	    		|| scanResultTxt.equalsIgnoreCase("JRR STUDENT COMM. CNTR")
+	    		|| scanResultTxt.equalsIgnoreCase("SCIENCE BUILDING (ELIAS)")
+	    		|| scanResultTxt.equalsIgnoreCase("BRADLEY BUILDING")
+    	){
+    		
+    		Intent intent= new Intent(WrongQRCode.this, ChooseDestination.class);
+        	
+        	intent.putExtra("scanResult", scanResultTxt);
+        	
+            startActivity(intent);    		
+    		   		
+    	}
+    	
+    	else{
+    	
+    		Intent intent= new Intent(WrongQRCode.this, WrongQRCode.class);
+        	
+            startActivity(intent);
+    		
+    	}   	    	
+    	
     }
-    */
 }

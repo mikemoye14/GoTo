@@ -205,6 +205,7 @@ int string scan_resut_lable 0x7f070006
 int string select_destination 0x7f07001f
 int string title_activity_building_info 0x7f070017
 int string title_activity_building_list 0x7f07000b
+int string title_activity_choose_destination 0x7f07002c
 int string title_activity_get_directions 0x7f07001c
 int string title_activity_wrong_qrcode 0x7f070023
 int string to 0x7f07002a

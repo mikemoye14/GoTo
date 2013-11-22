@@ -294,6 +294,7 @@ containing a value of this type.
         public static final int select_destination=0x7f07001f;
         public static final int title_activity_building_info=0x7f070017;
         public static final int title_activity_building_list=0x7f07000b;
+        public static final int title_activity_choose_destination=0x7f07002c;
         public static final int title_activity_get_directions=0x7f07001c;
         public static final int title_activity_wrong_qrcode=0x7f070023;
         public static final int to=0x7f07002a;

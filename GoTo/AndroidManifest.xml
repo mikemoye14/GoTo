@@ -43,15 +43,11 @@
         </activity>
         <activity
             android:name="main.ChooseDestination"
-            android:label="@string/title_activity_get_directions" >
+            android:label="@string/title_activity_choose_destination" >
         </activity>
         <activity
             android:name="main.WrongQRCode"
             android:label="@string/title_activity_wrong_qrcode" >
-        </activity>
-        <activity
-            android:name="main.GetDirections"
-            android:label="@string/title_activity_get_directions" >
         </activity>
         <activity
             android:name="main.GetDirections"

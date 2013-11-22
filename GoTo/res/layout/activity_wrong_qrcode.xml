@@ -25,36 +25,40 @@
     <TextView
         android:id="@+id/beginningTextView"
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:layout_marginTop="61dp"
-        android:layout_marginBottom="15dp"
-        android:background="#073763"
-        android:padding="20dp"
+        android:layout_height="250dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:background="#070657"
+        android:padding="40dp"
         android:text="@string/wron_qr_code_msg"
         android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textSize="24sp" />
 
     <com.beardedhen.androidbootstrap.BootstrapButton
         android:id="@+id/wrongQRCodeRescanButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:text="@string/re_scan"
         android:textSize="12sp"
         fontawesometext:bb_roundedCorners="true"
-        fontawesometext:bb_size="medium"
+        fontawesometext:bb_size="large"
         fontawesometext:bb_type="primary" >
+
     </com.beardedhen.androidbootstrap.BootstrapButton>
 
     <com.beardedhen.androidbootstrap.BootstrapButton
         android:id="@+id/wrongQRCodemainmenuButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:text="@string/main_menu"
         android:textSize="12sp"
         fontawesometext:bb_roundedCorners="true"
-        fontawesometext:bb_size="medium"
+        fontawesometext:bb_size="large"
         fontawesometext:bb_type="primary" >
     </com.beardedhen.androidbootstrap.BootstrapButton>
 

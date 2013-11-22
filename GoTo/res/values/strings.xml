@@ -30,7 +30,7 @@
     <string name="main_menu">MAIN MENU</string>
     <string name="new_building">NEW BUILDING</string>
     <string name="building_summary">buildingSummary</string>
-    <string name="title_activity_get_directions">Get Directions</string>
+    <string name="title_activity_get_directions">Directions</string>
     <string name="you_are_at">You are at:</string>
     <string name="current_location">currentLocation</string>
     <string name="select_destination">Select Destination:</string>
@@ -39,12 +39,13 @@
     <string name="game_room">GAME ROOM</string>
     <string name="title_activity_wrong_qrcode">Wrong QR Code</string>
     <string name="wrong_qr_code">WRONG QR CODE</string>
-    <string name="wron_qr_code_msg">The QR code you scanned was not a  GoTo QR code. Please scan a GoTo QR code.</string>
+    <string name="wron_qr_code_msg">The QR code you scanned was not a  GoTo QR code. \n\nPlease scan a GoTo QR code.</string>
     <string name="directions">Directions:</string>
     <string name="from">From</string>
     <string name="beginning">Beginnging</string>
     <string name="destination">destination</string>
     <string name="to">to</string>
     <string name="new_destination">NEW DESTINATION</string>
+    <string name="title_activity_choose_destination">Choose Destination</string>
 
 </resources>

@@ -1,7 +1,9 @@
 package main;
 
 import jim.h.common.android.lib.zxing.config.ZXingLibConfig;
+
 import com.beardedhen.androidbootstrap.BootstrapButton;
+
 //import com.beardedhen.androidbootstrap.FontAwesomeText;
 import jim.h.common.android.lib.zxing.integrator.IntentIntegrator;
 import jim.h.common.android.lib.zxing.integrator.IntentResult;
@@ -15,6 +17,7 @@ import android.content.pm.ActivityInfo;
 //import android.graphics.LightingColorFilter;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 //import android.widget.TextView;
@@ -26,7 +29,7 @@ public class MainActivity extends Activity {
     private ZXingLibConfig zxingLibConfig;
     
     private static String scanResultTxt;
-
+        
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +52,7 @@ public class MainActivity extends Activity {
                     public void onClick(DialogInterface dialog, int which) { 
                        // do nothing
                     }
-                 });
+                 });  
 		
         //btnScan.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
        // getInfoButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
@@ -76,7 +79,7 @@ public class MainActivity extends Activity {
         aboutButton.setOnClickListener(new OnClickListener() {
         	             @Override
         	             public void onClick(View v) {
-        	               aboutPopUp.show();
+        	            	 aboutPopUp.show();
         	            }
         	         });
         
@@ -90,8 +93,11 @@ public class MainActivity extends Activity {
             case IntentIntegrator.REQUEST_CODE: // æ‰«æ��ç»“æžœ
                 IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode,
                         resultCode, data);
-                if (scanResult == null) {
+                if (scanResult == null || scanResult.getContents() == "" || scanResult.getContents() == null) {
+                	
+                	showQRCodeError();
                     return;
+                    
                 }
                 final String result = scanResult.getContents();
                 if (result != null) {
@@ -101,11 +107,7 @@ public class MainActivity extends Activity {
                         	
                         	scanResultTxt = result;
                         	
-                        	Intent intent= new Intent(MainActivity.this, ChooseDestination.class);
-                        	
-                        	intent.putExtra("scanResult", scanResultTxt.toUpperCase());
-                        	
-                            startActivity(intent);
+                        	validateQRCode();                        	
                         	
                         }
                     });
@@ -114,13 +116,69 @@ public class MainActivity extends Activity {
             default:
         }        
         
-    }  
+    }
     
-    public static String getScanResult(){
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.wrong_qrcode, menu);
+        return true;
+    }
+    
+    private void showQRCodeError(){		
+		
+		final AlertDialog.Builder qrCodeErrorPopUp = new AlertDialog.Builder(this)
+	    .setTitle("QR Code Error")
+	    .setMessage("There seems to have been an error while scanning the QR Code. \n\nA team of highly trained monkeys has been dispatched to deal with this situation.")
+	    .setPositiveButton("Scan Again.", new DialogInterface.OnClickListener() {
+	        public void onClick(DialogInterface dialog, int which) { 
+	        	IntentIntegrator.initiateScan(MainActivity.this, zxingLibConfig);
+	        }
+	     })
+	     .setNegativeButton("Quit.", new DialogInterface.OnClickListener() {
+	        public void onClick(DialogInterface dialog, int which) { 
+	        	Intent intent= new Intent(MainActivity.this, MainActivity.class);
+	            startActivity(intent);
+	        }
+	     });
+		
+		qrCodeErrorPopUp.show();
+		
+	}
+    
+    private void validateQRCode(){
     	
-    	return scanResultTxt.toUpperCase();
+    	if(
+    			scanResultTxt.equalsIgnoreCase("GRUMBACHER ISTC")
+	    		|| scanResultTxt.equalsIgnoreCase("MCB/RAB")
+	    		|| scanResultTxt.equalsIgnoreCase("PULLO CENTER (PAC)")
+	    		|| scanResultTxt.equalsIgnoreCase("JRR STUDENT COMM. CNTR")
+	    		|| scanResultTxt.equalsIgnoreCase("SCIENCE BUILDING (ELIAS)")
+	    		|| scanResultTxt.equalsIgnoreCase("BRADLEY BUILDING")
+    	){
+    		
+    		Intent intent= new Intent(MainActivity.this, ChooseDestination.class);
+        	
+        	intent.putExtra("scanResult", scanResultTxt);
+        	
+            startActivity(intent);    		
+    		   		
+    	}
+    	
+    	else{
+    	
+    		Intent intent= new Intent(MainActivity.this, WrongQRCode.class);
+        	
+            startActivity(intent);
+    		
+    	}    	    	
     	
     }
     
+    public static String getScanResult(){
+    	
+    	return scanResultTxt.toUpperCase();    	
+    
+    }
     
 }
