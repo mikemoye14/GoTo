@@ -45,7 +45,7 @@ public class ChooseDestination extends Activity {
 		zxingLibConfig = new ZXingLibConfig();
         zxingLibConfig.useFrontLight = true;
         
-        scanResult = MainActivity.getScanResult().toUpperCase();
+        scanResult = getIntent().getStringExtra("scanResult").toUpperCase();
         
         final BootstrapButton mcbButton = (BootstrapButton) findViewById(R.id.mcb_rabDestinationButton);
     	final BootstrapButton pulloButton = (BootstrapButton) findViewById(R.id.pulloDestinationButton);
@@ -58,6 +58,43 @@ public class ChooseDestination extends Activity {
     	final BootstrapButton currentLocationButton = (BootstrapButton) findViewById(R.id.currentLocatonButton);
     	final BootstrapButton clearButton = (BootstrapButton) findViewById(R.id.clearButton);
     	final BootstrapButton reScanButton = (BootstrapButton) findViewById(R.id.rescanButton);
+    	    	
+    	if(scanResult.equalsIgnoreCase("GRUMBACHER ISTC")){
+        	
+    		istButton.setBootstrapButtonEnabled(false);
+        	
+        }
+    	
+    	if(scanResult.equalsIgnoreCase("MCB/RAB")){
+        	
+    		mcbButton.setBootstrapButtonEnabled(false);
+        	
+        }
+    	
+		if(scanResult.equalsIgnoreCase("PULLO CENTER (PAC)")){
+			
+			pulloButton.setBootstrapButtonEnabled(false);		
+			
+		}
+		
+		if(scanResult.equalsIgnoreCase("JRR STUDENT COMM. CNTR")){
+			
+			jrrsccButton.setBootstrapButtonEnabled(false);		
+			
+		}
+		
+		if(scanResult.equalsIgnoreCase("SCIENCE BUILDING (ELIAS)")){
+			
+			eliasButton.setBootstrapButtonEnabled(false);		
+			
+		}
+		
+		if(scanResult.equalsIgnoreCase("BRADLEY BUILDING")){
+			
+			bradleyButton.setBootstrapButtonEnabled(false);		
+			
+		}
+		
     	
 		currentLocationButton.setText(scanResult);
 		
@@ -94,6 +131,42 @@ public class ChooseDestination extends Activity {
             	bradleyButton.setBootstrapButtonEnabled(true);
             	
             	goToButton.setBootstrapButtonEnabled(false);
+            	
+            	if(scanResult.equalsIgnoreCase("GRUMBACHER ISTC")){
+                	
+            		istButton.setBootstrapButtonEnabled(false);
+                	
+                }
+
+            	if(scanResult.equalsIgnoreCase("MCB/RAB")){
+                	
+            		mcbButton.setBootstrapButtonEnabled(false);
+                	
+                }
+            	
+        		if(scanResult.equalsIgnoreCase("PULLO CENTER (PAC)")){
+        			
+        			pulloButton.setBootstrapButtonEnabled(false);		
+        			
+        		}
+        		
+        		if(scanResult.equalsIgnoreCase("JRR STUDENT COMM. CNTR")){
+        			
+        			jrrsccButton.setBootstrapButtonEnabled(false);		
+        			
+        		}
+        		
+        		if(scanResult.equalsIgnoreCase("SCIENCE BUILDING (ELIAS)")){
+        			
+        			eliasButton.setBootstrapButtonEnabled(false);		
+        			
+        		}
+        		
+        		if(scanResult.equalsIgnoreCase("BRADLEY BUILDING")){
+        			
+        			bradleyButton.setBootstrapButtonEnabled(false);		
+        			
+        		}
             }
         });
 		
