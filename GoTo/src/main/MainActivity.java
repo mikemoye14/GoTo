@@ -87,6 +87,13 @@ public class MainActivity extends Activity {
         
         
     }
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.wrong_qrcode, menu);
+        return true;
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -118,14 +125,7 @@ public class MainActivity extends Activity {
             default:
         }        
         
-    }
-    
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.wrong_qrcode, menu);
-        return true;
-    }
+    }  
     
     private void showQRCodeError(){		
 		
@@ -151,17 +151,15 @@ public class MainActivity extends Activity {
     private void validateQRCode(){
     	
     	if(
-    			scanResultTxt.equalsIgnoreCase("GRUMBACHER ISTC")
+    			scanResultTxt.equalsIgnoreCase("Grumbacher ISTC")
 	    		|| scanResultTxt.equalsIgnoreCase("MCB/RAB")
-	    		|| scanResultTxt.equalsIgnoreCase("PULLO CENTER (PAC)")
-	    		|| scanResultTxt.equalsIgnoreCase("JRR STUDENT COMM. CNTR")
-	    		|| scanResultTxt.equalsIgnoreCase("SCIENCE BUILDING (ELIAS)")
-	    		|| scanResultTxt.equalsIgnoreCase("BRADLEY BUILDING")
+	    		|| scanResultTxt.equalsIgnoreCase("Pullo Building (PAC)")
+	    		|| scanResultTxt.equalsIgnoreCase("JRR Student Comm. Cntr")
+	    		|| scanResultTxt.equalsIgnoreCase("Elias (Science Building)")
+	    		|| scanResultTxt.equalsIgnoreCase("Bradley Building")
     	){
     		
     		Intent intent= new Intent(MainActivity.this, ChooseDestination.class);
-    		
-    		
         	
         	intent.putExtra("scanResult", scanResultTxt);
         	

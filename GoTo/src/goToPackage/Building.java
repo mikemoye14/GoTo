@@ -21,11 +21,10 @@ public class Building {
 		
 	}
 	
-	public Building(String id, String name, String info, Image img, Direction dir){
+	public Building(String id, String name, Image img, Direction dir){
 		
 		this.id = id;
-		this.name = name;
-		this.info = info;
+		this.name = name;;
 		this.image = img;
 		this.directions = dir;
 		

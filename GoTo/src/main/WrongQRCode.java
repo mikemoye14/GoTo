@@ -129,12 +129,12 @@ public class WrongQRCode extends Activity {
     private void validateQRCode(){
     	
     	if(
-    			scanResultTxt.equalsIgnoreCase("GRUMBACHER ISTC")
+    			scanResultTxt.equalsIgnoreCase("Grumbacher ISTC")
 	    		|| scanResultTxt.equalsIgnoreCase("MCB/RAB")
-	    		|| scanResultTxt.equalsIgnoreCase("PULLO CENTER (PAC)")
-	    		|| scanResultTxt.equalsIgnoreCase("JRR STUDENT COMM. CNTR")
-	    		|| scanResultTxt.equalsIgnoreCase("SCIENCE BUILDING (ELIAS)")
-	    		|| scanResultTxt.equalsIgnoreCase("BRADLEY BUILDING")
+	    		|| scanResultTxt.equalsIgnoreCase("Pullo Building (PAC)")
+	    		|| scanResultTxt.equalsIgnoreCase("JRR Student Comm. Cntr")
+	    		|| scanResultTxt.equalsIgnoreCase("Elias (Science Building)")
+	    		|| scanResultTxt.equalsIgnoreCase("Bradley Building")
     	){
     		
     		Intent intent= new Intent(WrongQRCode.this, ChooseDestination.class);
