@@ -20,7 +20,7 @@ import android.os.Handler;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-//import android.widget.TextView;
+//import android.widget.TextView; 
 
 @SuppressLint("DefaultLocale")
 public class MainActivity extends Activity {
@@ -160,6 +160,8 @@ public class MainActivity extends Activity {
     	){
     		
     		Intent intent= new Intent(MainActivity.this, ChooseDestination.class);
+    		
+    		
         	
         	intent.putExtra("scanResult", scanResultTxt);
         	

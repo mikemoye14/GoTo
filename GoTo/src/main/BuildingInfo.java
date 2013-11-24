@@ -61,69 +61,11 @@ public class BuildingInfo extends Activity {
 		TextView buildingSelected = (TextView) findViewById(R.id.buildingSelected);
 		TextView buildingSummary = (TextView) findViewById(R.id.buildingSummaryAndInfo);
 		
-		buildingSelected.setText(BuildingList.getLocationSelected());
+		buildingSelected.setText(BuildingList.getBuilding().getBuildingName());
 		
-		if(BuildingList.getLocationSelected().equalsIgnoreCase("GRUMBACHER ISTC")){
-			
-			buildingSummary.setText(istInfo());
-			
-		}
+		buildingSummary.setText(BuildingList.getBuilding().getBuildingInfo());
 		
 	}
 	
-	private String istInfo(){
-		
-		String info =  "<p>The Grumbacher or ISTC is where most IST classes are held."
-						+ "<br />The first floor also has a lot of the staff offices.</p>"
-						+ "<p><strong>What's inside the ISTC</strong></p>"
-						+ "&#8226; Computer Lab/ Help Desk (106)<br />"
-						+ "&#8226; Bookstore<br />"
-						+ "&#8226; Faculty Offices (Floor 2)";
-		
-		return info;
-		
-	}
-	
-	private String mcbInfo(){
-		
-		String info =  "<p>The Main Classroom Building(MCB) and "
-						+ "The Romano Administration Building(RAB) "
-						+ "are internally connected on the lowest and the first levels.</p>"
-						+ "<p><strong>What's inside the MCB</strong></p>"
-						+ "&#8226; Registrar<br />"
-						+ "&#8226; Bursar <br />"
-						+ "&#8226; Admissions"
-						+ "<br /><br />"
-						+ "<p><strong>What's inside the RAB</strong></p>"
-						+ "&#8226; Lair<br />"
-						+ "&#8226; Security Office<br />"
-						+ "&#8226; Chancellor’s Suite"
-						+ "&#8226; Nittany Success Center";
-		
-		
-		return info;
-		
-	}
-	
-	private String bradleyInfo(){
-		
-		String info =  "<p>The Main Classroom Building(MCB) and "
-						+ "The Romano Administration Building(RAB) "
-						+ "are internally connected on the lowest and the first levels.</p>"
-						+ "<p><strong>What's inside the MCB</strong></p>"
-						+ "&#8226; Registrar<br />"
-						+ "&#8226; Bursar <br />"
-						+ "&#8226; Admissions"
-						+ "<br /><br />"
-						+ "<p><strong>What's inside the RAB</strong></p>"
-						+ "&#8226; Lair<br />"
-						+ "&#8226; Security Office<br />"
-						+ "&#8226; Chancellor’s Suite"
-						+ "&#8226; Nittany Success Center";
-		
-		
-		return info;
-		
-	}
 
 }
