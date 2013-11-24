@@ -46,6 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:height="225dp"
+                android:textSize="18sp"
                 android:text="@string/building_summary"
                 android:textColor="#000000" />
 

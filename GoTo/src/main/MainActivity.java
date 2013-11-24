@@ -47,7 +47,9 @@ public class MainActivity extends Activity {
         
         final AlertDialog.Builder aboutPopUp = new AlertDialog.Builder(this)
                 .setTitle("About")
-                .setMessage("About Summary Goes Here.")
+                .setMessage("GoTo allows navigation between the various building at Penn State York. This app will also provide information about the various buildings." 
+                			+ "\n\nTap \"Get Directions\" and then scan the QR code. Select the building you need to GoTo."
+                			+ " \n\nTap \"Get Information\" to get information about the various buildings.")
                 .setPositiveButton("OK. Got It.", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) { 
                        // do nothing

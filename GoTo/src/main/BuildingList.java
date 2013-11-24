@@ -15,7 +15,7 @@ import android.view.View.OnClickListener;
 
 public class BuildingList extends Activity {
 	
-	public String locationSelected;
+	public static String locationSelected;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -192,6 +192,12 @@ public class BuildingList extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.building_list, menu);
 		return true;
+	}
+	
+	public static String getLocationSelected(){
+		
+		return locationSelected;
+		
 	}
 
 }
