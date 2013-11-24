@@ -73,7 +73,7 @@ public class MainActivity extends Activity {
         getInfoButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-            	Intent intent= new Intent(MainActivity.this, BuildingList.class);
+            	Intent intent= new Intent(MainActivity.this, LocationList.class);
                 startActivity(intent);
             }
         });

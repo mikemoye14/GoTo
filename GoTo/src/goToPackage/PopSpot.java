@@ -4,6 +4,7 @@ public class PopSpot {
 	
 	private String id;
 	private String name;
+	private String location;
 	private String description;
 	private String hours;
 
@@ -11,29 +12,36 @@ public class PopSpot {
 				
 	}
 	
-	public PopSpot(String id, String name, String desc, String hrs){
+	public PopSpot(String id, String name, String location, String desc, String hrs){
 		
 		this.id = id;
 		this.name = name;
+		this.location = location;
 		this.description = desc;
 		this.hours = hrs;
 		
 	}
 	
-	public void setPopspotId(String id){
+	public void setPopSpotId(String id){
 		
 		this.id = id;
 		
 	}
 
-	public void setPopspotName(String name){
+	public void setPopSpotName(String name){
 		
 		this.name = name;
 		
 	}
 	
+	public void setPopSpotLocation(String location){
+		
+		this.location = location;
+		
+	}
 	
-	public void setPopspotDescription(String desc){
+	
+	public void setPopSpotDescription(String desc){
 		
 		this.description = desc;
 		
@@ -45,20 +53,26 @@ public class PopSpot {
 		
 	}	
 	
-	public String getPopspotId(){
+	public String getPopSpotId(){
 		
 		return this.id;
 		
 	}
 
-	public String getPopspotName(){
+	public String getPopSpotName(){
 		
 		return this.name;
 		
 	}
 	
+	public String getPopSpotLocation(){
+		
+		return this.location;
+		
+	}
 	
-	public String getPopspotDescription(){
+	
+	public String getPopSpotDescription(){
 		
 		return this.description;
 		

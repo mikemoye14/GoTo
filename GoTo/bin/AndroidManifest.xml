@@ -34,7 +34,7 @@
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name="main.BuildingList"
+            android:name="main.LocationList"
             android:label="@string/title_activity_building_list" >
         </activity>
         <activity
@@ -52,6 +52,10 @@
         <activity
             android:name="main.GetDirections"
             android:label="@string/title_activity_get_directions" >
+        </activity>
+        <activity
+            android:name="main.PopSpotInfo"
+            android:label="@string/title_activity_pop_spot_info" >
         </activity>
     </application>
 

@@ -15,7 +15,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import goToPackage.*;
 
-public class BuildingList extends Activity {
+public class LocationList extends Activity {
 	
 	public static String locationSelected;
 
@@ -55,7 +55,7 @@ public class BuildingList extends Activity {
             	
             	getBuilding();
             	
-            	Intent intent = new Intent(BuildingList.this, BuildingInfo.class);
+            	Intent intent = new Intent(LocationList.this, BuildingInfo.class);
             	
                 startActivity(intent);
             }
@@ -68,7 +68,9 @@ public class BuildingList extends Activity {
             	
             	locationSelected = "PULLO CENTER (PAC)";
             	
-            	Intent intent= new Intent(BuildingList.this, BuildingInfo.class);
+            	getBuilding();
+            	
+            	Intent intent = new Intent(LocationList.this, BuildingInfo.class);
             	
                 startActivity(intent);
             }
@@ -78,9 +80,11 @@ public class BuildingList extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	locationSelected = "JRR STUDENT COMM. CNTR";            	
+            	locationSelected = "JRR STUDENT COMM. CNTR";
             	
-            	Intent intent= new Intent(BuildingList.this, BuildingInfo.class);
+            	getBuilding();
+            	
+            	Intent intent = new Intent(LocationList.this, BuildingInfo.class);
             	
                 startActivity(intent);
             }
@@ -92,7 +96,9 @@ public class BuildingList extends Activity {
             	
             	locationSelected = "GRUMBRACHER ISTC";
             	
-            	Intent intent= new Intent(BuildingList.this, BuildingInfo.class);
+            	getBuilding();
+            	
+            	Intent intent = new Intent(LocationList.this, BuildingInfo.class);
             	
                 startActivity(intent);
             }
@@ -104,7 +110,9 @@ public class BuildingList extends Activity {
             	
             	locationSelected = "SCIENCE BUILDING (ELIAS)";
             	
-            	Intent intent= new Intent(BuildingList.this, BuildingInfo.class);
+            	getBuilding();
+            	
+            	Intent intent = new Intent(LocationList.this, BuildingInfo.class);
             	
                 startActivity(intent);
             }
@@ -116,7 +124,9 @@ public class BuildingList extends Activity {
             	
             	locationSelected = "BRADLEY BUILDING";
             	
-            	Intent intent= new Intent(BuildingList.this, BuildingInfo.class);
+            	getBuilding();
+            	
+            	Intent intent = new Intent(LocationList.this, BuildingInfo.class);
             	
                 startActivity(intent);
             }
@@ -128,7 +138,9 @@ public class BuildingList extends Activity {
             	
             	locationSelected = "BISTRO @ PULLO";
             	
-            	Intent intent= new Intent(BuildingList.this, BuildingInfo.class);
+            	getPopSpot();
+            	
+            	Intent intent = new Intent(LocationList.this, PopSpotInfo.class);
             	
                 startActivity(intent);
             }
@@ -140,7 +152,9 @@ public class BuildingList extends Activity {
             	
             	locationSelected = "LION'S DEN(CAFETERIA)";
             	
-            	Intent intent= new Intent(BuildingList.this, BuildingInfo.class);
+            	getPopSpot();
+            	
+            	Intent intent = new Intent(LocationList.this, PopSpotInfo.class);
             	
                 startActivity(intent);
             }
@@ -152,7 +166,9 @@ public class BuildingList extends Activity {
             	
             	locationSelected = "HELP DESK";
             	
-            	Intent intent= new Intent(BuildingList.this, BuildingInfo.class);
+            	getPopSpot();
+            	
+            	Intent intent = new Intent(LocationList.this, PopSpotInfo.class);
             	
                 startActivity(intent);
             }
@@ -164,20 +180,64 @@ public class BuildingList extends Activity {
             	
             	locationSelected = "GAME ROOM";
             	
-            	Intent intent= new Intent(BuildingList.this, BuildingInfo.class);
+            	getPopSpot();
+            	
+            	Intent intent= new Intent(LocationList.this, PopSpotInfo.class);
             	
                 startActivity(intent);
             }
         });
 		
 	}
-
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.building_list, menu);
 		return true;
 	}
+
+	public static PopSpot getPopSpot() {
+		
+		String name = locationSelected;
+		String location = "";
+		String id = "";
+		String info = "";
+		String hrs = "";
+		
+		if(name == "LION'S DEN(CAFETERIA)"){
+			
+			id = "1";
+				
+			info =	"<p>The Lion’s Den is the cafeteria on campus.</p>";
+			
+			location = "<b>Location: Ruhl Community Center</b>";
+			
+			hrs = "<br /><br /><b>Hours: Mon-Thu: 8am to 6pm</b><br />"
+					+ "<b>&nbsp;Fri: 8am to 2pm</b>";
+		
+		}
+		
+		if(name == "BISTRO @ PULLO"){
+			
+			id = "2";
+				
+			info =	"<p>The Bistro is a small coffee shop on campus.</p>";
+			
+			location = "<b>Location: Pullo Center</b>";
+			
+			hrs = "<br /><br /><b>Hours: Mon-Thu: 8:30am to 6pm</b><br />"
+					+ "<b>&nbsp;Fri:  8:30am to 2pm</b>";
+		
+		}
+		
+		PopSpot popspot = new PopSpot(id, name, location, info, hrs);
+		
+		return popspot;
+		
+	}
+
+	
 	
 	public static Building getBuilding() {
 		
@@ -199,7 +259,7 @@ public class BuildingList extends Activity {
 					+ "&nbsp;&#8226; Admissions"
 					+ "<br /><br />"
 					+ "<b>What's inside the RAB</b>"
-					+ "<br />"
+					+ "<br /><br />"
 					+ "&nbsp;&#8226; Lair<br />"
 					+ "&nbsp;&#8226; Security Office<br />"
 					+ "&nbsp;&#8226; Chancellor’s Suite<br />"
@@ -214,7 +274,7 @@ public class BuildingList extends Activity {
 			info =	"<p>The Grumbacher or ISTC is where most IST classes are held."
 					+ "<br />The first floor also has a lot of the staff offices.</p>"
 					+ "<b>What's inside the ISTC</b>"
-					+ "<br />"
+					+ "<br /><br />"
 					+ "&nbsp;&#8226; Computer Lab/ Help Desk (106)<br />"
 					+ "&nbsp;&#8226; Bookstore<br />"
 					+ "&nbsp;&#8226; Faculty Offices (Floor 2)<br />";
@@ -228,7 +288,7 @@ public class BuildingList extends Activity {
 			info =	"<p>The Ruhl community center is the recreational building on campus."
 					+ "<br />It’s where the SGA meets every Monday and also hosts other event.</p>"
 					+ "<b>What’s inside the Ruhl Community Center</b>"
-					+ "<br />"
+					+ "<br /><br />"
 					+ "&nbsp;&#8226; Community Room<br />"
 					+ "&nbsp;&#8226; Basketball Court<br />"
 					+ "&nbsp;&#8226; Gymnasium/Locker Rooms<br />"
@@ -263,7 +323,7 @@ public class BuildingList extends Activity {
 			id = "5";
 				
 			info =	"<p>The Edward M. Elias Science center holds science classes and has the labs for chemistry and biology.</p>"
-					+ "<b>Edward M. Elias Science Center</b>"
+					+ "<b>What’s inside Edward M. Elias Science Center</b>"
 					+ "<br /><br />"
 					+ "&nbsp;&#8226; Classrooms<br />"
 					+ "&nbsp;&#8226; Faculty Offices<br />"
@@ -279,13 +339,13 @@ public class BuildingList extends Activity {
 				
 			info =	"<p>The Bradley Building has continuing education offices."
 					+ "<br /> VLN and OLLI classes are monitored by them.</p>"
-					+ "<b>Bradley Building</b>"
+					+ "<b>What’s inside Bradley Building</b>"
 					+ "<br /><br />"
 					+ "&nbsp;&#8226; Offices of personnel who handle Continuing Education<br />";
 		
 		}
 		
-		Building building = new Building(id, location, Html.fromHtml(info).toString());
+		Building building = new Building(id, location, info);
 		
 		return building;
 		

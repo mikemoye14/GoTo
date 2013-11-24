@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.text.Html;
 //import android.text.Html;
 //import android.graphics.LightingColorFilter;
 import android.view.Menu;
@@ -42,7 +43,7 @@ public class BuildingInfo extends Activity {
 		newBuildingButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-            	Intent intent= new Intent(BuildingInfo.this, BuildingList.class);
+            	Intent intent= new Intent(BuildingInfo.this, LocationList.class);
                 startActivity(intent);
             }
         });
@@ -61,9 +62,9 @@ public class BuildingInfo extends Activity {
 		TextView buildingSelected = (TextView) findViewById(R.id.buildingSelected);
 		TextView buildingSummary = (TextView) findViewById(R.id.buildingSummaryAndInfo);
 		
-		buildingSelected.setText(BuildingList.getBuilding().getBuildingName());
+		buildingSelected.setText(LocationList.getBuilding().getBuildingName());
 		
-		buildingSummary.setText(BuildingList.getBuilding().getBuildingInfo());
+		buildingSummary.setText(Html.fromHtml(LocationList.getBuilding().getBuildingInfo()).toString());
 		
 	}
 	

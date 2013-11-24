@@ -162,11 +162,11 @@ containing a value of this type.
         public static final int zxinglib_icon=0x7f020014;
     }
     public static final class id {
-        public static final int TableLayout1=0x7f06002e;
+        public static final int TableLayout1=0x7f060035;
         public static final int View01=0x7f06002b;
-        public static final int aboutButton=0x7f06003b;
-        public static final int action_settings=0x7f060043;
-        public static final int beginningTextView=0x7f06002f;
+        public static final int aboutButton=0x7f060042;
+        public static final int action_settings=0x7f06004a;
+        public static final int beginningTextView=0x7f060036;
         public static final int bistroButton=0x7f060015;
         public static final int bottomRule=0x7f06000a;
         public static final int bradleyButton=0x7f060014;
@@ -183,43 +183,50 @@ containing a value of this type.
         public static final int eliasButton=0x7f060013;
         public static final int eliasDestinationButton=0x7f060022;
         public static final int gameRoomButton=0x7f060018;
-        public static final int getInfoButton=0x7f06003a;
+        public static final int getInfoButton=0x7f060041;
         public static final int goToButton=0x7f060027;
         public static final int helpDeskButton=0x7f060017;
-        public static final int imageView1=0x7f060038;
+        public static final int imageView1=0x7f06003f;
         public static final int istButton=0x7f060012;
         public static final int istDestinationButton=0x7f060021;
         public static final int jrrsccButton=0x7f060011;
         public static final int jrrsccDestinationButton=0x7f060020;
-        public static final int layout=0x7f060032;
-        public static final int lblColA=0x7f06003e;
-        public static final int lblColB=0x7f06003f;
-        public static final int lblLeft=0x7f060033;
-        public static final int lblMiddle=0x7f060034;
-        public static final int lblRight=0x7f060035;
-        public static final int lblSubTitle=0x7f06003d;
-        public static final int lblText=0x7f060036;
-        public static final int lblTitle=0x7f06003c;
+        public static final int layout=0x7f060039;
+        public static final int lblColA=0x7f060045;
+        public static final int lblColB=0x7f060046;
+        public static final int lblLeft=0x7f06003a;
+        public static final int lblMiddle=0x7f06003b;
+        public static final int lblRight=0x7f06003c;
+        public static final int lblSubTitle=0x7f060044;
+        public static final int lblText=0x7f06003d;
+        public static final int lblTitle=0x7f060043;
         public static final int lionsDenButton=0x7f060016;
         public static final int mainMenuButton=0x7f06000b;
         public static final int mcb_rabButton=0x7f06000f;
         public static final int mcb_rabDestinationButton=0x7f06001e;
         public static final int newBuildingButton=0x7f06000c;
         public static final int newDestinationButton=0x7f06002c;
+        public static final int popSpotBuildingSelected=0x7f06002e;
+        public static final int popSpotBuildingSummaryAndInfo=0x7f060031;
+        public static final int popSpotBuildingSummaryAndInfoScroll=0x7f060030;
+        public static final int popSpotMainMenuButton=0x7f060033;
+        public static final int popSpotNewBuildingButton=0x7f060034;
+        public static final int popSpotbottomRule=0x7f060032;
+        public static final int popSpottopRule=0x7f06002f;
         public static final int pulloButton=0x7f060010;
         public static final int pulloDestinationButton=0x7f06001f;
         public static final int reScanDirectionsButton=0x7f06002d;
         public static final int rescanButton=0x7f060026;
-        public static final int scan_button=0x7f060039;
+        public static final int scan_button=0x7f060040;
         public static final int scrollView1=0x7f060029;
         public static final int selectDestinationLabel=0x7f06001b;
-        public static final int tableLayout1=0x7f060037;
+        public static final int tableLayout1=0x7f06003e;
         public static final int tableRow1=0x7f060024;
         public static final int textView1=0x7f06000e;
         public static final int toFromTextView=0x7f060028;
         public static final int topRule=0x7f060007;
-        public static final int wrongQRCodeRescanButton=0x7f060030;
-        public static final int wrongQRCodemainmenuButton=0x7f060031;
+        public static final int wrongQRCodeRescanButton=0x7f060037;
+        public static final int wrongQRCodemainmenuButton=0x7f060038;
         public static final int youAreAtLabel=0x7f060019;
         /**  Messages IDs 
          */
@@ -227,32 +234,34 @@ containing a value of this type.
         public static final int zxinglib_decode=0x7f060001;
         public static final int zxinglib_decode_failed=0x7f060002;
         public static final int zxinglib_decode_succeeded=0x7f060003;
-        public static final int zxinglib_preview_view=0x7f060040;
+        public static final int zxinglib_preview_view=0x7f060047;
         public static final int zxinglib_quit=0x7f060004;
         public static final int zxinglib_return_scan_result=0x7f060005;
-        public static final int zxinglib_status_view=0x7f060042;
-        public static final int zxinglib_viewfinder_view=0x7f060041;
+        public static final int zxinglib_status_view=0x7f060049;
+        public static final int zxinglib_viewfinder_view=0x7f060048;
     }
     public static final class layout {
         public static final int activity_building_info=0x7f030000;
         public static final int activity_building_list=0x7f030001;
         public static final int activity_choose_destination=0x7f030002;
         public static final int activity_get_directions=0x7f030003;
-        public static final int activity_wrong_qrcode=0x7f030004;
-        public static final int bootstrap_button=0x7f030005;
-        public static final int font_awesome_text=0x7f030006;
-        public static final int main=0x7f030007;
-        public static final int row_title=0x7f030008;
-        public static final int row_title_and_subtitle=0x7f030009;
-        public static final int row_two_columns=0x7f03000a;
-        public static final int zxinglib_capture=0x7f03000b;
+        public static final int activity_pop_spot_info=0x7f030004;
+        public static final int activity_wrong_qrcode=0x7f030005;
+        public static final int bootstrap_button=0x7f030006;
+        public static final int font_awesome_text=0x7f030007;
+        public static final int main=0x7f030008;
+        public static final int row_title=0x7f030009;
+        public static final int row_title_and_subtitle=0x7f03000a;
+        public static final int row_two_columns=0x7f03000b;
+        public static final int zxinglib_capture=0x7f03000c;
     }
     public static final class menu {
         public static final int building_info=0x7f0a0000;
         public static final int building_list=0x7f0a0001;
         public static final int get_directions=0x7f0a0002;
         public static final int main=0x7f0a0003;
-        public static final int wrong_qrcode=0x7f0a0004;
+        public static final int pop_spot_info=0x7f0a0004;
+        public static final int wrong_qrcode=0x7f0a0005;
     }
     public static final class raw {
         public static final int zxinglib_beep=0x7f040000;
@@ -296,6 +305,7 @@ containing a value of this type.
         public static final int title_activity_building_list=0x7f07000b;
         public static final int title_activity_choose_destination=0x7f07002c;
         public static final int title_activity_get_directions=0x7f07001c;
+        public static final int title_activity_pop_spot_info=0x7f07002d;
         public static final int title_activity_wrong_qrcode=0x7f070023;
         public static final int to=0x7f07002a;
         public static final int wron_qr_code_msg=0x7f070025;
