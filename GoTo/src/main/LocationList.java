@@ -7,9 +7,7 @@ import com.beardedhen.androidbootstrap.BootstrapButton;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-//import android.graphics.LightingColorFilter;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -51,13 +49,14 @@ public class LocationList extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	locationSelected = "MCB/RAB";
+            	setLocationSelected("MCB/RAB");
             	
             	getBuilding();
             	
             	Intent intent = new Intent(LocationList.this, BuildingInfo.class);
             	
                 startActivity(intent);
+            	
             }
 			
         });
@@ -66,13 +65,14 @@ public class LocationList extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	locationSelected = "PULLO CENTER (PAC)";
+            	setLocationSelected("PULLO CENTER (PAC)");
             	
             	getBuilding();
             	
             	Intent intent = new Intent(LocationList.this, BuildingInfo.class);
             	
                 startActivity(intent);
+            	
             }
         });
 		
@@ -80,13 +80,14 @@ public class LocationList extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	locationSelected = "JRR STUDENT COMM. CNTR";
+            	setLocationSelected("JRR STUDENT COMM. CNTR");
             	
             	getBuilding();
             	
             	Intent intent = new Intent(LocationList.this, BuildingInfo.class);
             	
                 startActivity(intent);
+            	
             }
         });
 		
@@ -94,13 +95,14 @@ public class LocationList extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	locationSelected = "GRUMBRACHER ISTC";
+            	setLocationSelected("GRUMBACHER ISTC");
             	
             	getBuilding();
             	
             	Intent intent = new Intent(LocationList.this, BuildingInfo.class);
             	
                 startActivity(intent);
+            	
             }
         });
 		
@@ -108,13 +110,14 @@ public class LocationList extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	locationSelected = "SCIENCE BUILDING (ELIAS)";
+            	setLocationSelected("SCIENCE BUILDING (ELIAS)");
             	
             	getBuilding();
             	
             	Intent intent = new Intent(LocationList.this, BuildingInfo.class);
             	
                 startActivity(intent);
+            	
             }
         });
 		
@@ -122,13 +125,14 @@ public class LocationList extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	locationSelected = "BRADLEY BUILDING";
+            	setLocationSelected("BRADLEY BUILDING");
             	
             	getBuilding();
             	
             	Intent intent = new Intent(LocationList.this, BuildingInfo.class);
             	
                 startActivity(intent);
+            	            	
             }
         });
 		
@@ -136,13 +140,14 @@ public class LocationList extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	locationSelected = "BISTRO @ PULLO";
+            	setLocationSelected("BISTRO @ PULLO");
             	
-            	getPopSpot();
-            	
-            	Intent intent = new Intent(LocationList.this, PopSpotInfo.class);
+            	getPopSpot();  
+        		
+        		Intent intent = new Intent(LocationList.this, PopSpotInfo.class);
             	
                 startActivity(intent);
+                
             }
         });
 
@@ -150,13 +155,15 @@ public class LocationList extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	locationSelected = "LION'S DEN(CAFETERIA)";
+            	setLocationSelected("LION'S DEN(CAFETERIA)");
             	
             	getPopSpot();
             	
-            	Intent intent = new Intent(LocationList.this, PopSpotInfo.class);
+        		Intent intent = new Intent(LocationList.this, PopSpotInfo.class);
             	
                 startActivity(intent);
+            	
+            	
             }
         });
 		
@@ -164,13 +171,14 @@ public class LocationList extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	locationSelected = "HELP DESK";
+            	setLocationSelected("HELP DESK");
             	
             	getPopSpot();
+        		
+        		Intent intent = new Intent(LocationList.this, PopSpotInfo.class);
             	
-            	Intent intent = new Intent(LocationList.this, PopSpotInfo.class);
+                startActivity(intent); 
             	
-                startActivity(intent);
             }
         });
 		
@@ -178,13 +186,14 @@ public class LocationList extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	locationSelected = "GAME ROOM";
+            	setLocationSelected("GAME ROOM");
             	
             	getPopSpot();
-            	
-            	Intent intent= new Intent(LocationList.this, PopSpotInfo.class);
+        		
+        		Intent intent = new Intent(LocationList.this, PopSpotInfo.class);
             	
                 startActivity(intent);
+            	
             }
         });
 		
@@ -237,7 +246,11 @@ public class LocationList extends Activity {
 		
 	}
 
-	
+	public static void setLocationSelected(String location){
+		
+		locationSelected = location;		
+		
+	}
 	
 	public static Building getBuilding() {
 		
@@ -267,7 +280,7 @@ public class LocationList extends Activity {
 		
 		}
 		
-		if(location == "GRUMBRACHER ISTC"){
+		if(location == "GRUMBACHER ISTC"){
 			
 			id = "2";
 				

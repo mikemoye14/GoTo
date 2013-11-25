@@ -1,5 +1,7 @@
 package main;
 
+import goToPackage.*;
+
 import com.beardedhen.androidbootstrap.BootstrapButton;
 
 import jim.h.common.android.lib.zxing.config.ZXingLibConfig;
@@ -174,11 +176,11 @@ public class ChooseDestination extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	Intent intent= new Intent(ChooseDestination.this, BuildingInfo.class);
+            	LocationList.setLocationSelected(MainActivity.getScanResult().toUpperCase());
             	
-            	intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            	LocationList.getBuilding();
             	
-            	intent.putExtra("buildingSelected", getIntent().getStringExtra("scanResult"));
+            	Intent intent = new Intent(ChooseDestination.this, BuildingInfo.class);
             	
                 startActivity(intent);
             }
@@ -197,6 +199,8 @@ public class ChooseDestination extends Activity {
             	goToButton.setBootstrapButtonEnabled(true);
             	
             	buildingSelected = "MCB/RAB"; 
+            	
+            	getBuildingDirections();
             }
         });
 		
@@ -284,6 +288,71 @@ public class ChooseDestination extends Activity {
 	
 	
 
+	public static Building getBuildingDirections() {
+		
+		String location = buildingSelected;		
+		String id = "";
+		Image img = null;
+		Direction dir = null;
+		
+		if(location == "MCB/RAB"){
+			
+			id = "1";
+			
+			img = new Image();
+				
+			
+		
+		}
+		
+		if(location == "GRUMBACHER ISTC"){
+			
+			id = "2";
+				
+			
+		
+		}
+		
+		if(location == "JRR STUDENT COMM. CNTR"){
+			
+			id = "3";
+				
+			
+		
+		}
+		
+		if(location == "PULLO CENTER (PAC)"){
+			
+			id = "4";
+				
+			
+		
+		}
+		
+		if(location == "SCIENCE BUILDING (ELIAS)"){
+			
+			id = "5";
+				
+			
+		
+		}
+		
+		if(location == "BRADLEY BUILDING"){
+			
+			id = "6";
+				
+			
+		
+		}
+		
+		Building building = new Building(id, location, img, dir);
+		
+		return building;
+		
+	}
+
+
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -347,12 +416,12 @@ public class ChooseDestination extends Activity {
     private void validateQRCode(){
     	
     	if(
-    			scanResultTxt.equalsIgnoreCase("GRUMBACHER ISTC")
+    			scanResultTxt.equalsIgnoreCase("Grumbacher ISTC")
 	    		|| scanResultTxt.equalsIgnoreCase("MCB/RAB")
-	    		|| scanResultTxt.equalsIgnoreCase("PULLO CENTER (PAC)")
-	    		|| scanResultTxt.equalsIgnoreCase("JRR STUDENT COMM. CNTR")
-	    		|| scanResultTxt.equalsIgnoreCase("SCIENCE BUILDING (ELIAS)")
-	    		|| scanResultTxt.equalsIgnoreCase("BRADLEY BUILDING")
+	    		|| scanResultTxt.equalsIgnoreCase("Pullo Building (PAC)")
+	    		|| scanResultTxt.equalsIgnoreCase("JRR Student Comm. Cntr")
+	    		|| scanResultTxt.equalsIgnoreCase("Elias (Science Building)")
+	    		|| scanResultTxt.equalsIgnoreCase("Bradley Building")
     	){
     		
     		Intent intent= new Intent(ChooseDestination.this, ChooseDestination.class);
@@ -372,7 +441,9 @@ public class ChooseDestination extends Activity {
     	}    	    	    	    	
     	
     }
+    
 	
+    
 	public static String getDestination(){
 		
 		return buildingSelected;		

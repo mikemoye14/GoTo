@@ -157,9 +157,34 @@ containing a value of this type.
         public static final int edittext_background_rounded=0x7f02000f;
         public static final int ic_launcher=0x7f020010;
         public static final int icon=0x7f020011;
-        public static final int logo=0x7f020012;
-        public static final int star=0x7f020013;
-        public static final int zxinglib_icon=0x7f020014;
+        public static final int ist_afar=0x7f020012;
+        public static final int ist_front=0x7f020013;
+        public static final int ist_lot=0x7f020014;
+        public static final int logo=0x7f020015;
+        public static final int mcb=0x7f020016;
+        public static final int mcb_entrance=0x7f020017;
+        public static final int mcb_entrance_2=0x7f020018;
+        public static final int penn_state=0x7f020019;
+        public static final int pullo_close=0x7f02001a;
+        public static final int pullo_close_2=0x7f02001b;
+        public static final int pullo_far=0x7f02001c;
+        public static final int pullo_lot_1=0x7f02001d;
+        public static final int pullo_lot_2=0x7f02001e;
+        public static final int pullo_path=0x7f02001f;
+        public static final int pullo_top_entrance=0x7f020020;
+        public static final int rab_back=0x7f020021;
+        public static final int rab_back_2=0x7f020022;
+        public static final int rab_entrance=0x7f020023;
+        public static final int rab_front=0x7f020024;
+        public static final int ruhl_1=0x7f020025;
+        public static final int ruhl_2=0x7f020026;
+        public static final int science_center_front=0x7f020027;
+        public static final int soccer=0x7f020028;
+        public static final int stairs=0x7f020029;
+        public static final int stairs_2=0x7f02002a;
+        public static final int star=0x7f02002b;
+        public static final int tennis=0x7f02002c;
+        public static final int zxinglib_icon=0x7f02002d;
     }
     public static final class id {
         public static final int TableLayout1=0x7f060035;
