@@ -43,7 +43,7 @@ public class LocationList extends Activity {
 		final BootstrapButton helpDeskButton = (BootstrapButton) findViewById(R.id.helpDeskButton);		
 		
 		final BootstrapButton gameRoomButton = (BootstrapButton) findViewById(R.id.gameRoomButton);		
-		gameRoomButton.setRightIcon("fa-star");
+		//gameRoomButton.setRightIcon("fa-star");
 		
 		mcbButton.setOnClickListener(new OnClickListener() {
             @Override
