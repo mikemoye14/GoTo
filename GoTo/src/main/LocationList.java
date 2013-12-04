@@ -43,7 +43,7 @@ public class LocationList extends Activity {
 		final BootstrapButton helpDeskButton = (BootstrapButton) findViewById(R.id.helpDeskButton);		
 		
 		final BootstrapButton gameRoomButton = (BootstrapButton) findViewById(R.id.gameRoomButton);		
-		gameRoomButton.setRightIcon("fa-star");
+		//gameRoomButton.setRightIcon("fa-star");
 		
 		mcbButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -171,7 +171,7 @@ public class LocationList extends Activity {
             @Override
             public void onClick(View v) {
             	
-            	setLocationSelected("HELP DESK");
+            	setLocationSelected("IT HELP DESK");
             	
             	getPopSpot();
         		
@@ -237,6 +237,31 @@ public class LocationList extends Activity {
 			
 			hrs = "<br /><br /><b>Hours: Mon-Thu: 8:30am to 6pm</b><br />"
 					+ "<b>&nbsp;Fri:  8:30am to 2pm</b>";
+		
+		}
+		
+		if(name == "IT HELP DESK"){
+			
+			id = "3";
+				
+			info =	"<p>The Lion’s Den is the cafeteria on campus.</p>";
+			
+			location = "<b>Location: Grumbacher ISTC</b>";
+			
+			hrs = "<br /><br /><b>Hours: Mon-Fri: 8am to 6pm</b><br />";
+		
+		}
+		
+		if(name == "GAME ROOM"){
+			
+			id = "4";
+				
+			info =	"<p>The game room has pool table tennis, and xbox that you can use for free." +
+					"<br />The SGA room is also located here.</p>";
+			
+			location = "<b>Location: Ruhl Community Center</b>";
+			
+			hrs = "<br /><br /><b>Hours: Mon-Fri: 9am to 9pm</b><br />";
 		
 		}
 		

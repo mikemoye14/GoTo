@@ -21,14 +21,14 @@
     <string name="elias">SCIENCE BUILDING (ELIAS)</string>
     <string name="bradley">BRADLEY BUILDING</string>
     <string name="lions_den">LIONS DEN (CAFETERIA)</string>
-    <string name="help_desk">HELP DESK</string>
+    <string name="help_desk">IT HELP DESK</string>
     <string name="clear">CLEAR</string>
     <string name="bistro">BISTRO @ PULLO</string>
     <string name="building_list_label">Select One for Information:</string>
     <string name="title_activity_building_info">Building Information</string>
     <string name="building_selected">buildingSelected</string>
     <string name="main_menu">MAIN MENU</string>
-    <string name="new_building">NEW BUILDING</string>
+    <string name="new_building">CHANGE BUILDING</string>
     <string name="building_summary">buildingSummary</string>
     <string name="title_activity_get_directions">Directions</string>
     <string name="you_are_at">You are at:</string>
