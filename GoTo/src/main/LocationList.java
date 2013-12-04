@@ -252,6 +252,19 @@ public class LocationList extends Activity {
 		
 		}
 		
+		if(name == "GAME ROOM"){
+			
+			id = "4";
+				
+			info =	"<p>The game room has pool table tennis, and xbox that you can use for free." +
+					"<br />The SGA room is also located here.</p>";
+			
+			location = "<b>Location: Ruhl Community Center</b>";
+			
+			hrs = "<br /><br /><b>Hours: Mon-Fri: 9am to 9pm</b><br />";
+		
+		}
+		
 		PopSpot popspot = new PopSpot(id, name, location, info, hrs);
 		
 		return popspot;
