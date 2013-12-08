@@ -3,6 +3,7 @@ package main;
 import jim.h.common.android.lib.zxing.config.ZXingLibConfig;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
+import sid.database.*;
 
 //import com.beardedhen.androidbootstrap.FontAwesomeText;
 import jim.h.common.android.lib.zxing.integrator.IntentIntegrator;
@@ -27,6 +28,8 @@ public class MainActivity extends Activity {
     private Handler        handler = new Handler();
     //private TextView       txtScanResult;
     private ZXingLibConfig zxingLibConfig;
+   
+    public TestAdapter mDbHelper; 
     
     private static String scanResultTxt;
         
@@ -34,6 +37,9 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        
+        mDbHelper = new TestAdapter(this); 
+        mDbHelper.createDatabase();
         
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -74,6 +80,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
             	Intent intent= new Intent(MainActivity.this, LocationList.class);
+            	LocationList.setDatabase(mDbHelper);
                 startActivity(intent);
             }
         });

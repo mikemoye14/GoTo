@@ -3,7 +3,7 @@ package main;
 import jim.h.common.android.lib.zxing.sample.R;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
-
+import sid.database.*;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -16,6 +16,7 @@ import goToPackage.*;
 public class LocationList extends Activity {
 	
 	public static String locationSelected;
+	public static TestAdapter mDbHelper;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -283,11 +284,19 @@ public class LocationList extends Activity {
 		String id = "";
 		String info = "";
 		
+		mDbHelper.open();
+		
+		
+		
+		
+		
 		if(location == "MCB/RAB"){
 			
 			id = "1";
-				
-			info =	"<p>The Main Classroom Building(MCB) and "
+			info= mDbHelper.getData("Buildings", "b03", "building_info");
+			
+			/*
+			info =	"<p>The Main Classroom Building(MCB) "
 					+ "The Romano Administration Building(RAB) "
 					+ "are internally connected on the lowest and the first levels.</p>"
 					+ "<b>What's inside the MCB</b>"
@@ -302,13 +311,16 @@ public class LocationList extends Activity {
 					+ "&nbsp;&#8226; Security Office<br />"
 					+ "&nbsp;&#8226; Chancellor’s Suite<br />"
 					+ "&nbsp;&#8226; Nittany Success Center<br />";
-		
+		*/
 		}
 		
 		if(location == "GRUMBACHER ISTC"){
 			
 			id = "2";
-				
+			
+			info= mDbHelper.getData("Buildings", "b03", "building_info");
+			
+			/*
 			info =	"<p>The Grumbacher or ISTC is where most IST classes are held."
 					+ "<br />The first floor also has a lot of the staff offices.</p>"
 					+ "<b>What's inside the ISTC</b>"
@@ -317,12 +329,16 @@ public class LocationList extends Activity {
 					+ "&nbsp;&#8226; Bookstore<br />"
 					+ "&nbsp;&#8226; Faculty Offices (Floor 2)<br />";
 		
+		*/
 		}
 		
 		if(location == "JRR STUDENT COMM. CNTR"){
 			
 			id = "3";
-				
+			
+			info= mDbHelper.getData("Buildings", "b03", "building_info");
+			
+			/*	
 			info =	"<p>The Ruhl community center is the recreational building on campus."
 					+ "<br />It’s where the SGA meets every Monday and also hosts other event.</p>"
 					+ "<b>What’s inside the Ruhl Community Center</b>"
@@ -334,13 +350,15 @@ public class LocationList extends Activity {
 					+ "&nbsp;&#8226; Lion’s Den (Cafeteria)<br />"
 					+ "&nbsp;&#8226; Student Affairs Office<br />"
 					+ "&nbsp;&#8226; Multicultural Office<br />";
-		
+		*/
 		}
 		
 		if(location == "PULLO CENTER (PAC)"){
 			
 			id = "4";
 				
+			info= mDbHelper.getData("Buildings", "b03", "building_info");
+			/*
 			info =	"<p>The Pullo Performing Arts Center or PAC is a state of the art performing facility on campus. "
 					+ "<br />In the past it has held events like ‘America’s Got Talent’, ‘Switchfoot’ and ‘Phillip Phillips’ to name a few. "
 					+ "<br />The pullo is the only building that is open on Saturdays and Sundays.</p>"
@@ -353,13 +371,15 @@ public class LocationList extends Activity {
 					+ "&nbsp;&#8226; Cinema Classrooms<br />"
 					+ "&nbsp;&#8226; Honors Student Room<br />"
 					+ "&nbsp;&#8226; The Bistro<br />";
-		
+		*/
 		}
 		
 		if(location == "SCIENCE BUILDING (ELIAS)"){
 			
 			id = "5";
-				
+			info= mDbHelper.getData("Buildings", "b03", "building_info");
+			
+			/*
 			info =	"<p>The Edward M. Elias Science center holds science classes and has the labs for chemistry and biology.</p>"
 					+ "<b>What’s inside Edward M. Elias Science Center</b>"
 					+ "<br /><br />"
@@ -368,24 +388,35 @@ public class LocationList extends Activity {
 					+ "&nbsp;&#8226; Chemistry Labs<br />"
 					+ "&nbsp;&#8226; Biology Labs<br />"
 					+ "&nbsp;&#8226; Starbucks Green House<br />";
-		
+		*/
 		}
 		
 		if(location == "BRADLEY BUILDING"){
 			
 			id = "6";
 				
+			info= mDbHelper.getData("Buildings", "b03", "building_info");
+			
+			/*
 			info =	"<p>The Bradley Building has continuing education offices."
 					+ "<br /> VLN and OLLI classes are monitored by them.</p>"
 					+ "<b>What’s inside Bradley Building</b>"
 					+ "<br /><br />"
 					+ "&nbsp;&#8226; Offices of personnel who handle Continuing Education<br />";
-		
+		*/
 		}
+		
+		mDbHelper.close();
 		
 		Building building = new Building(id, location, info);
 		
 		return building;
+		
+	}
+	
+	public static void setDatabase(TestAdapter abc ){
+		
+		mDbHelper=abc;
 		
 	}
 
