@@ -3,7 +3,7 @@ package main;
 import jim.h.common.android.lib.zxing.config.ZXingLibConfig;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
-import sid.database.*;
+import com.sqlDatabase.*;
 
 //import com.beardedhen.androidbootstrap.FontAwesomeText;
 import jim.h.common.android.lib.zxing.integrator.IntentIntegrator;

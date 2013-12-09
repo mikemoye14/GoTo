@@ -178,6 +178,38 @@
 	                    fontawesometext:bb_type="primary" >
 	                </com.beardedhen.androidbootstrap.BootstrapButton>
 	                
+	                 <com.beardedhen.androidbootstrap.BootstrapButton
+	                    android:id="@+id/bursarOfficeButton"
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginBottom="10dp"
+	                    android:layout_marginLeft="10dp"
+	                    android:layout_marginRight="10dp"
+	                    android:text="@string/game_room"
+	                    android:textColor="#FFFF00"
+	                    bootstrapbutton:bb_icon_right="fa-star"
+	                    android:textSize="12sp"
+	                    fontawesometext:bb_roundedCorners="true"
+	                    fontawesometext:bb_size="large"
+	                    fontawesometext:bb_type="primary" >
+	                </com.beardedhen.androidbootstrap.BootstrapButton>
+	                
+	                  <com.beardedhen.androidbootstrap.BootstrapButton
+	                    android:id="@+id/registrarButton"
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginBottom="10dp"
+	                    android:layout_marginLeft="10dp"
+	                    android:layout_marginRight="10dp"
+	                    android:text="@string/game_room"
+	                    android:textColor="#FFFF00"
+	                    bootstrapbutton:bb_icon_right="fa-star"
+	                    android:textSize="12sp"
+	                    fontawesometext:bb_roundedCorners="true"
+	                    fontawesometext:bb_size="large"
+	                    fontawesometext:bb_type="primary" >
+	                </com.beardedhen.androidbootstrap.BootstrapButton>
+	                
 		</TableLayout>
 		
 	</ScrollView>

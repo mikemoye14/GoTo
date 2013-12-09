@@ -3,7 +3,8 @@ package main;
 import jim.h.common.android.lib.zxing.sample.R;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
-import sid.database.*;
+import com.sqlDatabase.*;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -44,6 +45,10 @@ public class LocationList extends Activity {
 		final BootstrapButton helpDeskButton = (BootstrapButton) findViewById(R.id.helpDeskButton);		
 		
 		final BootstrapButton gameRoomButton = (BootstrapButton) findViewById(R.id.gameRoomButton);		
+		
+		final BootstrapButton bursarOfficeButton = (BootstrapButton) findViewById(R.id.bursarOfficeButton);
+		
+		final BootstrapButton registrarButton = (BootstrapButton) findViewById(R.id.registrarButton);
 		//gameRoomButton.setRightIcon("fa-star");
 		
 		mcbButton.setOnClickListener(new OnClickListener() {
@@ -198,6 +203,36 @@ public class LocationList extends Activity {
             }
         });
 		
+		bursarOfficeButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            	
+            	setLocationSelected("BURSAR OFFICE");
+            	
+            	getPopSpot();
+        		
+        		Intent intent = new Intent(LocationList.this, PopSpotInfo.class);
+            	
+                startActivity(intent);
+            	
+            }
+        });
+		
+		registrarButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            	
+            	setLocationSelected("REGISTRAR");
+            	
+            	getPopSpot();
+        		
+        		Intent intent = new Intent(LocationList.this, PopSpotInfo.class);
+            	
+                startActivity(intent);
+            	
+            }
+        });
+		
 	}
 	
 	@Override
@@ -215,56 +250,119 @@ public class LocationList extends Activity {
 		String info = "";
 		String hrs = "";
 		
+		mDbHelper.open();
+		
 		if(name == "LION'S DEN(CAFETERIA)"){
 			
 			id = "1";
-				
+			
+			info= mDbHelper.getData("Pop_spot", "p01", "popspot_description");
+			hrs=  mDbHelper.getData("Pop_spot", "p01", "popspot_hours");
+			location = mDbHelper.getData("Pop_spot", "p01", "popspot_location");
+			
+			/*
 			info =	"<p>The Lion’s Den is the cafeteria on campus.</p>";
 			
 			location = "<b>Location: Ruhl Community Center</b>";
 			
 			hrs = "<br /><br /><b>Hours: Mon-Thu: 8am to 6pm</b><br />"
 					+ "<b>&nbsp;Fri: 8am to 2pm</b>";
+			*/		 
+					 
 		
 		}
 		
 		if(name == "BISTRO @ PULLO"){
 			
 			id = "2";
-				
+			
+			info= mDbHelper.getData("Pop_spot", "p02", "popspot_description");
+			hrs=  mDbHelper.getData("Pop_spot", "p02", "popspot_hours");
+			location = mDbHelper.getData("Pop_spot", "p02", "popspot_location");
+			
+			/*	
 			info =	"<p>The Bistro is a small coffee shop on campus.</p>";
 			
 			location = "<b>Location: Pullo Center</b>";
 			
 			hrs = "<br /><br /><b>Hours: Mon-Thu: 8:30am to 6pm</b><br />"
 					+ "<b>&nbsp;Fri:  8:30am to 2pm</b>";
+					*/
 		
 		}
 		
 		if(name == "IT HELP DESK"){
 			
 			id = "3";
-				
+			
+			info= mDbHelper.getData("Pop_spot", "p03", "popspot_description");
+			hrs=  mDbHelper.getData("Pop_spot", "p03", "popspot_hours");
+			location = mDbHelper.getData("Pop_spot", "p03", "popspot_location");
+			
+			/*
 			info =	"<p>The Lion’s Den is the cafeteria on campus.</p>";
 			
 			location = "<b>Location: Grumbacher ISTC</b>";
 			
 			hrs = "<br /><br /><b>Hours: Mon-Fri: 8am to 6pm</b><br />";
-		
+		*/
 		}
 		
 		if(name == "GAME ROOM"){
 			
 			id = "4";
 				
+			info= mDbHelper.getData("Pop_spot", "p04", "popspot_description");
+			hrs=  mDbHelper.getData("Pop_spot", "p04", "popspot_hours");
+			location = mDbHelper.getData("Pop_spot", "p04", "popspot_location");
+			
+			/*
 			info =	"<p>The game room has pool table tennis, and xbox that you can use for free." +
 					"<br />The SGA room is also located here.</p>";
 			
 			location = "<b>Location: Ruhl Community Center</b>";
 			
 			hrs = "<br /><br /><b>Hours: Mon-Fri: 9am to 9pm</b><br />";
-		
+		*/
 		}
+		
+		if(name == "BURSAR OFFICE"){
+					
+					id = "5";
+						
+					info= mDbHelper.getData("Pop_spot", "p05", "popspot_description");
+					hrs=  mDbHelper.getData("Pop_spot", "p05", "popspot_hours");
+					location = mDbHelper.getData("Pop_spot", "p05", "popspot_location");
+					
+					/*
+					info =	"<p>The game room has pool table tennis, and xbox that you can use for free." +
+							"<br />The SGA room is also located here.</p>";
+					
+					location = "<b>Location: Ruhl Community Center</b>";
+					
+					hrs = "<br /><br /><b>Hours: Mon-Fri: 9am to 9pm</b><br />";
+				*/
+				}
+		
+			if(name == "REGISTRAR"){
+						
+						id = "6";
+							
+						info= mDbHelper.getData("Pop_spot", "p06", "popspot_description");
+						hrs=  mDbHelper.getData("Pop_spot", "p06", "popspot_hours");
+						location = mDbHelper.getData("Pop_spot", "p06", "popspot_location");
+						
+						/*
+						info =	"<p>The game room has pool table tennis, and xbox that you can use for free." +
+								"<br />The SGA room is also located here.</p>";
+						
+						location = "<b>Location: Ruhl Community Center</b>";
+						
+						hrs = "<br /><br /><b>Hours: Mon-Fri: 9am to 9pm</b><br />";
+					*/
+					}
+		
+		mDbHelper.close();
 		
 		PopSpot popspot = new PopSpot(id, name, location, info, hrs);
 		
@@ -294,6 +392,7 @@ public class LocationList extends Activity {
 			
 			id = "1";
 			info= mDbHelper.getData("Buildings", "b03", "building_info");
+			info= info + mDbHelper.getData("Buildings", "b04", "building_info");
 			
 			/*
 			info =	"<p>The Main Classroom Building(MCB) "
@@ -318,7 +417,7 @@ public class LocationList extends Activity {
 			
 			id = "2";
 			
-			info= mDbHelper.getData("Buildings", "b03", "building_info");
+			info= mDbHelper.getData("Buildings", "b01", "building_info");
 			
 			/*
 			info =	"<p>The Grumbacher or ISTC is where most IST classes are held."
@@ -336,7 +435,7 @@ public class LocationList extends Activity {
 			
 			id = "3";
 			
-			info= mDbHelper.getData("Buildings", "b03", "building_info");
+			info= mDbHelper.getData("Buildings", "b06", "building_info");
 			
 			/*	
 			info =	"<p>The Ruhl community center is the recreational building on campus."
@@ -357,7 +456,7 @@ public class LocationList extends Activity {
 			
 			id = "4";
 				
-			info= mDbHelper.getData("Buildings", "b03", "building_info");
+			info= mDbHelper.getData("Buildings", "b05", "building_info");
 			/*
 			info =	"<p>The Pullo Performing Arts Center or PAC is a state of the art performing facility on campus. "
 					+ "<br />In the past it has held events like ‘America’s Got Talent’, ‘Switchfoot’ and ‘Phillip Phillips’ to name a few. "
@@ -377,7 +476,7 @@ public class LocationList extends Activity {
 		if(location == "SCIENCE BUILDING (ELIAS)"){
 			
 			id = "5";
-			info= mDbHelper.getData("Buildings", "b03", "building_info");
+			info= mDbHelper.getData("Buildings", "b07", "building_info");
 			
 			/*
 			info =	"<p>The Edward M. Elias Science center holds science classes and has the labs for chemistry and biology.</p>"
@@ -395,7 +494,7 @@ public class LocationList extends Activity {
 			
 			id = "6";
 				
-			info= mDbHelper.getData("Buildings", "b03", "building_info");
+			info= mDbHelper.getData("Buildings", "b02", "building_info");
 			
 			/*
 			info =	"<p>The Bradley Building has continuing education offices."
