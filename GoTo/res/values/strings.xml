@@ -48,5 +48,7 @@
     <string name="new_destination">NEW DESTINATION</string>
     <string name="title_activity_choose_destination">Choose Destination</string>
     <string name="title_activity_pop_spot_info">Popular Spot Information</string>
+    <color name="black">#000000</color>
+    <string name="nothing"/>
 
 </resources>

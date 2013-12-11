@@ -6,19 +6,28 @@ public class Direction {
 	private String sequenceNumber;
 	private String beginning;
 	private String destination;
-	private String imageId;
+	private int image;
+	private String directionTxt;
 
 	public Direction(){
 		
 	}
 	
-	public Direction(String id, String sequenceNumber, String beginning, String destination, String imageId){
+	public Direction(String id, String directionTxt, int image){
+		
+		this.id = id;
+		this.directionTxt = directionTxt;
+		this.image = image;
+		
+	}
+	
+	public Direction(String id, String sequenceNumber, String beginning, String destination, int image){
 		
 		this.id = id;
 		this.sequenceNumber = sequenceNumber;
 		this.beginning = beginning;
 		this.destination = destination;
-		this.imageId = imageId;
+		this.image = image;
 		
 	}
 	
@@ -46,11 +55,18 @@ public class Direction {
 		
 	}
 	
-	public void setDirectionImageId(String imageId){
+	public void setDirectionImageId(int image){
 		
-		this.imageId = imageId;
+		this.image = image;
 		
 	}
+	
+	public void setDirectionTxt(String directionTxt){
+		
+		this.directionTxt = directionTxt;
+		
+	}
+	
 	
 	public String getDirectionId(){
 		
@@ -76,9 +92,15 @@ public class Direction {
 		
 	}
 	
-	public String getDirectionImageId(){
+	public int getDirectionImage(){
 		
-		return this.imageId;
+		return this.image;
+		
+	}
+	
+	public String getDirectionTxt(){
+		
+		return this.directionTxt;
 		
 	}
 

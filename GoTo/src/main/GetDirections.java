@@ -14,6 +14,8 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+//import android.text.SpannableString;
+//import android.text.style.ImageSpan;
 //import android.graphics.LightingColorFilter;
 import android.view.Menu;
 import android.view.View;
@@ -41,8 +43,17 @@ public class GetDirections extends Activity {
         
         TextView toFrom = (TextView) findViewById(R.id.toFromTextView);
         
+        TextView directionsTextView1 = (TextView) findViewById(R.id.textView2);
+        
         toFrom.setText("From: " + ChooseDestination.getDestination() + " \nTo: " + ChooseDestination.getBeginning());
-               
+
+        //ImageSpan is = new ImageSpan(this, R.drawable.error);
+        
+        directionsTextView1.setText("  " + ChooseDestination.getBuildingDirections(ChooseDestination.getDestination(), MainActivity.getScanResult()).get(0).getDirectionTxt());
+        
+        directionsTextView1.setCompoundDrawablesWithIntrinsicBounds(R.drawable.error, 0, 0, 0);
+        
+        
         final BootstrapButton newDestinationButton = (BootstrapButton) findViewById(R.id.newDestinationButton);
         final BootstrapButton reScanDirectionsButton = (BootstrapButton) findViewById(R.id.reScanDirectionsButton);
         final BootstrapButton mainmenuButton = (BootstrapButton) findViewById(R.id.mainMenuButton);

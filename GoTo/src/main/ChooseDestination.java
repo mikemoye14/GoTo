@@ -1,8 +1,11 @@
 package main;
 
+import java.util.ArrayList;
+
 import goToPackage.*;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
+import com.sqlDatabase.TestAdapter;
 
 import jim.h.common.android.lib.zxing.config.ZXingLibConfig;
 import jim.h.common.android.lib.zxing.integrator.IntentIntegrator;
@@ -27,7 +30,9 @@ public class ChooseDestination extends Activity {
 	
 	private Handler        handler = new Handler();
     //private TextView       txtScanResult;
-    private ZXingLibConfig zxingLibConfig;    
+    private ZXingLibConfig zxingLibConfig;
+
+	public static TestAdapter mDbHelper;
     
     private String scanResultTxt;
     
@@ -42,7 +47,7 @@ public class ChooseDestination extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_choose_destination);
 		
-		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);;
 		
 		zxingLibConfig = new ZXingLibConfig();
         zxingLibConfig.useFrontLight = true;
@@ -117,7 +122,7 @@ public class ChooseDestination extends Activity {
             	Intent intent= new Intent(ChooseDestination.this, GetDirections.class);
             	            	
                 startActivity(intent);
-            	
+                            	
             }
         });
 		
@@ -198,9 +203,8 @@ public class ChooseDestination extends Activity {
             	
             	goToButton.setBootstrapButtonEnabled(true);
             	
-            	buildingSelected = "MCB/RAB"; 
+            	buildingSelected = "MCB/RAB";
             	
-            	getBuildingDirections();
             }
         });
 		
@@ -288,66 +292,84 @@ public class ChooseDestination extends Activity {
 	
 	
 
-	public static Building getBuildingDirections() {
+	public static ArrayList<Direction> getBuildingDirections(String destination, String source) {		
 		
-		String location = buildingSelected;		
+		//String destination = buildingSelected;		
 		String id = "";
-		Image img = null;
 		Direction dir = null;
 		
-		if(location == "MCB/RAB"){
-			
-			id = "1";
-			
-			img = new Image();
+		ArrayList<Direction> directions = new ArrayList<Direction>();
+		
+		if(destination != null && source != null && destination != "" && source != ""){
+		
+			if(destination == "MCB/RAB" && MainActivity.getScanResult() == "GRUMBACHER ISTC"){
+				
+				id = "1";
+				
+				for(int i=12; i<19; i++){
+					
+					mDbHelper.open();
+					
+					//dir = new Direction(id, mDbHelper.getData("Direction", "d0" + i, "directions"), mDbHelper.getData("Direction", "d0" + i, "image_Name"));
+					
+					mDbHelper.close();
+					
+					directions.add(dir);
+					
+				}
+				
 				
 			
+			}
+			
+			else{
+				
+				dir = new Direction(id, "There was an error", R.drawable.error);
+				
+				directions.add(dir);
+				
+			}
+			
+			if(destination == "JRR STUDENT COMM. CNTR" && MainActivity.getScanResult() == "GRUMBACHER ISTC"){
+				
+				id = "1";
+				
+				for(int i=1; i<4; i++){
+					
+					mDbHelper.open();
+				
+					//dir = new Direction(id, mDbHelper.getData("Direction", "d0" + i, "directions"), mDbHelper.getData("Direction", "d0" + i, "image_Name"));
+					
+					mDbHelper.close();
+					
+					directions.add(dir);
+					
+				}
+				
+				
+			
+			}
+			
+			else{
+				
+				dir = new Direction(id, "There was an error", R.drawable.error);
+				
+				directions.add(dir);
+				
+			}
 		
 		}
 		
-		if(location == "GRUMBACHER ISTC"){
+		else{
 			
-			id = "2";
-				
+			dir = new Direction(id, "There was an error", R.drawable.error);
 			
-		
+			directions.add(dir);
+			
 		}
 		
-		if(location == "JRR STUDENT COMM. CNTR"){
-			
-			id = "3";
-				
-			
 		
-		}
-		
-		if(location == "PULLO CENTER (PAC)"){
-			
-			id = "4";
-				
-			
-		
-		}
-		
-		if(location == "SCIENCE BUILDING (ELIAS)"){
-			
-			id = "5";
-				
-			
-		
-		}
-		
-		if(location == "BRADLEY BUILDING"){
-			
-			id = "6";
-				
-			
-		
-		}
-		
-		Building building = new Building(id, location, img, dir);
-		
-		return building;
+		return directions;
 		
 	}
 
