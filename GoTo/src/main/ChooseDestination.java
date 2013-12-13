@@ -31,8 +31,6 @@ public class ChooseDestination extends Activity {
 	private Handler        handler = new Handler();
     //private TextView       txtScanResult;
     private ZXingLibConfig zxingLibConfig;
-
-	public static TestAdapter mDbHelper;
     
     private String scanResultTxt;
     
@@ -289,90 +287,6 @@ public class ChooseDestination extends Activity {
         });	
 				
 	}
-	
-	
-
-	public static ArrayList<Direction> getBuildingDirections(String destination, String source) {		
-		
-		//String destination = buildingSelected;		
-		String id = "";
-		Direction dir = null;
-		
-		ArrayList<Direction> directions = new ArrayList<Direction>();
-		
-		if(destination != null && source != null && destination != "" && source != ""){
-		
-			if(destination == "MCB/RAB" && MainActivity.getScanResult() == "GRUMBACHER ISTC"){
-				
-				id = "1";
-				
-				for(int i=12; i<19; i++){
-					
-					mDbHelper.open();
-					
-					//dir = new Direction(id, mDbHelper.getData("Direction", "d0" + i, "directions"), mDbHelper.getData("Direction", "d0" + i, "image_Name"));
-					
-					mDbHelper.close();
-					
-					directions.add(dir);
-					
-				}
-				
-				
-			
-			}
-			
-			else{
-				
-				dir = new Direction(id, "There was an error", R.drawable.error);
-				
-				directions.add(dir);
-				
-			}
-			
-			if(destination == "JRR STUDENT COMM. CNTR" && MainActivity.getScanResult() == "GRUMBACHER ISTC"){
-				
-				id = "1";
-				
-				for(int i=1; i<4; i++){
-					
-					mDbHelper.open();
-				
-					//dir = new Direction(id, mDbHelper.getData("Direction", "d0" + i, "directions"), mDbHelper.getData("Direction", "d0" + i, "image_Name"));
-					
-					mDbHelper.close();
-					
-					directions.add(dir);
-					
-				}
-				
-				
-			
-			}
-			
-			else{
-				
-				dir = new Direction(id, "There was an error", R.drawable.error);
-				
-				directions.add(dir);
-				
-			}
-		
-		}
-		
-		else{
-			
-			dir = new Direction(id, "There was an error", R.drawable.error);
-			
-			directions.add(dir);
-			
-		}
-		
-		
-		return directions;
-		
-	}
-
 
 
 	@Override

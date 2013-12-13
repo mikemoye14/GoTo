@@ -1,12 +1,16 @@
 package main;
 
+import java.util.ArrayList;
+
 import jim.h.common.android.lib.zxing.config.ZXingLibConfig;
 import jim.h.common.android.lib.zxing.integrator.IntentIntegrator;
 import jim.h.common.android.lib.zxing.integrator.IntentResult;
 import jim.h.common.android.lib.zxing.sample.R;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
+import com.sqlDatabase.DatabaseInterface;
 
+import goToPackage.*;
 import android.os.Bundle;
 import android.os.Handler;
 import android.app.Activity;
@@ -39,20 +43,7 @@ public class GetDirections extends Activity {
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		
 		zxingLibConfig = new ZXingLibConfig();
-        zxingLibConfig.useFrontLight = true;  
-        
-        TextView toFrom = (TextView) findViewById(R.id.toFromTextView);
-        
-        TextView directionsTextView1 = (TextView) findViewById(R.id.textView2);
-        
-        toFrom.setText("From: " + ChooseDestination.getDestination() + " \nTo: " + ChooseDestination.getBeginning());
-
-        //ImageSpan is = new ImageSpan(this, R.drawable.error);
-        
-        directionsTextView1.setText("  " + ChooseDestination.getBuildingDirections(ChooseDestination.getDestination(), MainActivity.getScanResult()).get(0).getDirectionTxt());
-        
-        directionsTextView1.setCompoundDrawablesWithIntrinsicBounds(R.drawable.error, 0, 0, 0);
-        
+        zxingLibConfig.useFrontLight = true;
         
         final BootstrapButton newDestinationButton = (BootstrapButton) findViewById(R.id.newDestinationButton);
         final BootstrapButton reScanDirectionsButton = (BootstrapButton) findViewById(R.id.reScanDirectionsButton);
@@ -61,6 +52,7 @@ public class GetDirections extends Activity {
     	//reScanDirectionsButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
         //newDestinationButton.getBackground().setColorFilter(new LightingColorFilter(0x073763, 0x073763));
        
+        setText();
         
         reScanDirectionsButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -184,6 +176,29 @@ public class GetDirections extends Activity {
 	            startActivity(intent);
 	    		
 	    	}    	    	
+	    	
+	    }
+	    
+	    private void setText(){
+	    	
+	    	DatabaseInterface dbInterface = new DatabaseInterface(ChooseDestination.getDestination(), MainActivity.getScanResult());
+	    	
+	    	ArrayList<Direction> directionsArray = new ArrayList<Direction>();
+	    	
+	    	directionsArray = dbInterface.getBuildingDirections();
+	    	
+	    	TextView toFrom = (TextView) findViewById(R.id.toFromTextView);
+	        
+	        TextView directionsTextView1 = (TextView) findViewById(R.id.textView2);
+	        
+	        toFrom.setText("From: " + ChooseDestination.getDestination() + " \nTo: " + ChooseDestination.getBeginning());
+
+	        //ImageSpan is = new ImageSpan(this, R.drawable.error);
+	        
+	        directionsTextView1.setText("  " + directionsArray.get(0).getDirectionTxt());
+	        
+	        directionsTextView1.setCompoundDrawablesWithIntrinsicBounds(R.drawable.error, 0, 0, 0);
+	        
 	    	
 	    }
 }
