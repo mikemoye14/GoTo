@@ -37,7 +37,7 @@ public ArrayList<Direction> getBuildingDirections() {
 		
 		try{
 		
-		//mDbHelper.open();
+		mDbHelper.open();
 		
 		if(destination.equalsIgnoreCase("MCB/RAB") && beginning.equalsIgnoreCase("GRUMBACHER ISTC")){
 			
@@ -87,7 +87,7 @@ public ArrayList<Direction> getBuildingDirections() {
 		}
 		finally{
 		
-			//mDbHelper.close();	
+			mDbHelper.close();	
 		
 		}
 				
@@ -97,6 +97,11 @@ public ArrayList<Direction> getBuildingDirections() {
 		
 	}
 
+public void setDatabase(TestAdapter abc ){
+	
+	mDbHelper=abc;
+	
+}
 
 
 }

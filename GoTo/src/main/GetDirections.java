@@ -9,6 +9,7 @@ import jim.h.common.android.lib.zxing.sample.R;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
 import com.sqlDatabase.DatabaseInterface;
+import com.sqlDatabase.TestAdapter;
 
 import goToPackage.*;
 import android.os.Bundle;
@@ -35,6 +36,8 @@ public class GetDirections extends Activity {
     
     private String scanResultTxt;
 
+    public static TestAdapter mDbHelper;
+    
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -184,7 +187,7 @@ public class GetDirections extends Activity {
 	    	DatabaseInterface dbInterface = new DatabaseInterface(ChooseDestination.getDestination(), MainActivity.getScanResult());
 	    	
 	    	ArrayList<Direction> directionsArray = new ArrayList<Direction>();
-	    	
+	    	dbInterface.setDatabase(mDbHelper);
 	    	directionsArray = dbInterface.getBuildingDirections();
 	    	
 	    	TextView toFrom = (TextView) findViewById(R.id.toFromTextView);
@@ -201,4 +204,10 @@ public class GetDirections extends Activity {
 	        
 	    	
 	    }
+	    
+	    public static void setDatabase(TestAdapter abc ){
+			
+			mDbHelper=abc;
+			
+		}
 }

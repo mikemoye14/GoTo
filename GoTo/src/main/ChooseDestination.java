@@ -38,6 +38,8 @@ public class ChooseDestination extends Activity {
     
     private static String buildingSelected;
     
+    public static TestAdapter mDbHelper;
+    
     //private Intent wrongCodeIntent = new Intent(ChooseDestination.this, WrongQRCode.class);
     
 	@Override
@@ -118,7 +120,7 @@ public class ChooseDestination extends Activity {
             public void onClick(View v) {
             	
             	Intent intent= new Intent(ChooseDestination.this, GetDirections.class);
-            	            	
+            	GetDirections.setDatabase(mDbHelper);            	
                 startActivity(intent);
                             	
             }
@@ -363,7 +365,7 @@ public class ChooseDestination extends Activity {
     		Intent intent= new Intent(ChooseDestination.this, ChooseDestination.class);
         	
         	intent.putExtra("scanResult", scanResultTxt);
-        	
+        	ChooseDestination.setDatabase(mDbHelper);
             startActivity(intent);    		
     		   		
     	}
@@ -390,6 +392,12 @@ public class ChooseDestination extends Activity {
 		
 		return scanResult;		
 	
-	}	
+	}
+	
+public static void setDatabase(TestAdapter abc ){
+		
+		mDbHelper=abc;
+		
+	}
 	
 }

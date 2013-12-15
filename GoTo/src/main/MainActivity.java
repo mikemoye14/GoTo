@@ -169,7 +169,7 @@ public class MainActivity extends Activity {
     		Intent intent= new Intent(MainActivity.this, ChooseDestination.class);
         	
         	intent.putExtra("scanResult", scanResultTxt);
-        	
+        	ChooseDestination.setDatabase(mDbHelper);
             startActivity(intent);    		
     		   		
     	}
