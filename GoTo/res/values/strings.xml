@@ -45,7 +45,7 @@
     <string name="beginning">Beginnging</string>
     <string name="destination">destination</string>
     <string name="to">to</string>
-    <string name="new_destination">NEW DESTINATION</string>
+    <string name="new_destination">CHANGE DESTINATION</string>
     <string name="title_activity_choose_destination">Choose Destination</string>
     <string name="title_activity_pop_spot_info">Popular Spot Information</string>
     <color name="black">#000000</color>

@@ -206,7 +206,7 @@
 	    android:layout_marginRight="20dp"
 	    android:layout_marginBottom="10dp"
 	    bootstrapbutton:bb_roundedCorners="true"
-	    bootstrapbutton:bb_size="medium"
+	    bootstrapbutton:bb_size="small"
 	    bootstrapbutton:bb_type="primary" />
     
     <com.beardedhen.androidbootstrap.BootstrapButton
@@ -219,7 +219,7 @@
 	    android:layout_marginRight="20dp"
 	    android:layout_marginBottom="10dp"
 	    bootstrapbutton:bb_roundedCorners="true"
-	    bootstrapbutton:bb_size="medium"
+	    bootstrapbutton:bb_size="small"
 	    bootstrapbutton:bb_type="primary" />
     
     <com.beardedhen.androidbootstrap.BootstrapButton
@@ -231,7 +231,7 @@
 	    android:layout_marginLeft="20dp"
 	    android:layout_marginRight="20dp"
 	    bootstrapbutton:bb_roundedCorners="true"
-	    bootstrapbutton:bb_size="medium"
+	    bootstrapbutton:bb_size="small"
 	    bootstrapbutton:bb_type="primary" />
 
 </TableLayout>

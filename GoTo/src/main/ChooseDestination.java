@@ -177,6 +177,8 @@ public class ChooseDestination extends Activity {
             }
         });
 		
+		/*
+		
 		currentLocationButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -190,6 +192,8 @@ public class ChooseDestination extends Activity {
                 startActivity(intent);
             }
         });
+        
+        */
 		
 		mcbButton.setOnClickListener(new OnClickListener() {
             @Override

@@ -30,7 +30,7 @@
         <ScrollView
             android:id="@+id/popSpotBuildingSummaryAndInfoScroll"
             android:layout_width="fill_parent"
-            android:layout_height="300dp"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@color/white"
             android:fadeScrollbars="false" >

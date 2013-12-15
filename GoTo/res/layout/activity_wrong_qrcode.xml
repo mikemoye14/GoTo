@@ -44,7 +44,7 @@
         android:text="@string/re_scan"
         android:textSize="12sp"
         fontawesometext:bb_roundedCorners="true"
-        fontawesometext:bb_size="large"
+        fontawesometext:bb_size="medium"
         fontawesometext:bb_type="primary" >
 
     </com.beardedhen.androidbootstrap.BootstrapButton>
@@ -58,7 +58,7 @@
         android:text="@string/main_menu"
         android:textSize="12sp"
         fontawesometext:bb_roundedCorners="true"
-        fontawesometext:bb_size="large"
+        fontawesometext:bb_size="medium"
         fontawesometext:bb_type="primary" >
     </com.beardedhen.androidbootstrap.BootstrapButton>
 

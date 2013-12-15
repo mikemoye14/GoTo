@@ -39,21 +39,18 @@ public ArrayList<Direction> getBuildingDirections() {
 		
 		mDbHelper.open();
 		
+		/*
 		if(destination.equalsIgnoreCase("MCB/RAB") && beginning.equalsIgnoreCase("GRUMBACHER ISTC")){
 			
 			id = "1";
-			
-			//dir = new Direction(id,"test", 0); // mDbHelper.getData("Direction", "d00" + i, "directions")
-			
-			//directions.add(dir);
 			
 			for(int i=12; i<19; i++){
 				
 				//if(mDbHelper.getData("Direction", "d00" + i, "image_Name") == "";
 				
-				dir = new Direction(id, "test", 0);
+				//dir = new Direction(id, "test", 0);
 				
-				//dir = new Direction(id, mDbHelper.getData("Direction", "d00" + i, "directions"), 0);
+				dir = new Direction(id, mDbHelper.getData("Direction", "d00" + i, "directions"), 0);
 				
 				directions.add(dir);
 				
@@ -83,7 +80,7 @@ public ArrayList<Direction> getBuildingDirections() {
 			
 		}
 		
-		
+		*/
 		}
 		finally{
 		

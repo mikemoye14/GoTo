@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:text="@string/you_are_at"
         android:layout_margin="5dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAppearance="?android:attr/textAppearancesmall"
         android:textColor="#000000" />
     
     <com.beardedhen.androidbootstrap.BootstrapButton
@@ -30,7 +30,7 @@
         android:text="@string/current_location"
         android:textSize="12sp"
         fontawesometext:bb_roundedCorners="true"
-        fontawesometext:bb_size="large"
+        fontawesometext:bb_size="small"
         fontawesometext:bb_type="primary" >
 	</com.beardedhen.androidbootstrap.BootstrapButton>
 
@@ -46,13 +46,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/select_destination"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAppearance="?android:attr/textAppearancesmall"
         android:textColor="#000000" />
 
     <ScrollView
         android:id="@+id/destinationScrollView"
         android:layout_width="fill_parent"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         android:background="@color/white"
         android:fadeScrollbars="false"
         android:padding="5dp"
@@ -61,7 +61,7 @@
         <TableLayout
             android:id="@+id/destinationTable"
             android:layout_width="match_parent"
-            android:layout_height="300dp" >
+            android:layout_height="wrap_content" >
             
             <com.beardedhen.androidbootstrap.BootstrapButton
 		        android:id="@+id/mcb_rabDestinationButton"
@@ -73,7 +73,7 @@
 		        android:text="@string/mcb_rab"
 		        android:textSize="12sp"
 		        fontawesometext:bb_roundedCorners="true"
-		        fontawesometext:bb_size="large"
+		        fontawesometext:bb_size="small"
 		        fontawesometext:bb_type="primary" >
 			</com.beardedhen.androidbootstrap.BootstrapButton>
             
@@ -87,7 +87,7 @@
 		        android:text="@string/pullo_center"
 		        android:textSize="12sp"
 		        fontawesometext:bb_roundedCorners="true"
-		        fontawesometext:bb_size="large"
+		        fontawesometext:bb_size="small"
 		        fontawesometext:bb_type="primary" >
 			</com.beardedhen.androidbootstrap.BootstrapButton>
             
@@ -101,7 +101,7 @@
 		        android:text="@string/jrrscc"
 		        android:textSize="12sp"
 		        fontawesometext:bb_roundedCorners="true"
-		        fontawesometext:bb_size="large"
+		        fontawesometext:bb_size="small"
 		        fontawesometext:bb_type="primary" >
 			</com.beardedhen.androidbootstrap.BootstrapButton>
             
@@ -115,7 +115,7 @@
 		        android:text="@string/istc"
 		        android:textSize="12sp"
 		        fontawesometext:bb_roundedCorners="true"
-		        fontawesometext:bb_size="large"
+		        fontawesometext:bb_size="small"
 		        fontawesometext:bb_type="primary" >
 			</com.beardedhen.androidbootstrap.BootstrapButton>
             
@@ -129,7 +129,7 @@
 		        android:text="@string/elias"
 		        android:textSize="12sp"
 		        fontawesometext:bb_roundedCorners="true"
-		        fontawesometext:bb_size="large"
+		        fontawesometext:bb_size="small"
 		        fontawesometext:bb_type="primary" >
 			</com.beardedhen.androidbootstrap.BootstrapButton>
             
@@ -143,7 +143,7 @@
 		        android:text="@string/bradley"
 		        android:textSize="12sp"
 		        fontawesometext:bb_roundedCorners="true"
-		        fontawesometext:bb_size="large"
+		        fontawesometext:bb_size="small"
 		        fontawesometext:bb_type="primary" >
 			</com.beardedhen.androidbootstrap.BootstrapButton>
 
@@ -172,7 +172,7 @@
             android:layout_margin="5dp"
             android:textSize="12sp"
             fontawesometext:bb_roundedCorners="true"
-            fontawesometext:bb_size="medium"
+            fontawesometext:bb_size="small"
             fontawesometext:bb_type="primary" >
 
 		</com.beardedhen.androidbootstrap.BootstrapButton>
@@ -185,7 +185,7 @@
             android:textSize="12sp"
             android:layout_margin="5dp"
             fontawesometext:bb_roundedCorners="true"
-            fontawesometext:bb_size="medium"
+            fontawesometext:bb_size="small"
             fontawesometext:bb_type="primary" >
 		</com.beardedhen.androidbootstrap.BootstrapButton>
         
@@ -197,7 +197,7 @@
             android:textSize="12sp"
             android:layout_margin="5dp"
             fontawesometext:bb_roundedCorners="true"
-            fontawesometext:bb_size="medium"
+            fontawesometext:bb_size="small"
             fontawesometext:bb_type="primary" >
 
 		</com.beardedhen.androidbootstrap.BootstrapButton>
